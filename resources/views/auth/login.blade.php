@@ -23,7 +23,7 @@
                 <input type="email" name="email" id="email" required>
                 <label for="password">Password : </label>
                 <input type="password" name="password" id="password" required>
-                <p style="font-size: 20px; position:absolute; margin-top: -5px;"><input type="checkbox" id="checkbox">remember me &hearts;</p>
+                <p style="font-size: 20px; position:absolute; margin-top:0px;"><input type="checkbox" id="checkbox">  Remember Me &hearts;</p>
             </fieldset>
             <button type="submit">Sign-In</button>
             <div class="registerInfo">

@@ -133,6 +133,27 @@ class ProductController extends Controller
                         ->with('success', 'Product updated successfully');
     }
 
+
+    // SEARCHING
+    public function search(Request $request, $mode, $keyword)
+    {
+        if ($mode == 'search') {
+            $seller = User::all();
+            $product = Product::where('name', 'like', "%".$keyword."%")->get();
+        }
+        elseif ($mode == 'category') {
+            $seller = User::all();
+            $product = Product::where('category', $keyword)->get();
+        }
+        elseif ($mode == 'organisasi') {
+            $seller = Seller::where('name', $keyword)->get();
+            $product = Product::where('seller_id', $seller->first()->id);
+        }
+
+        return view('home', compact('product', 'seller'))
+                    ->with('i');
+    }
+
     /**
      * Remove the specified resource from storage.
      *

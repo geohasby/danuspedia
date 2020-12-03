@@ -227,6 +227,40 @@ Header
   /* Change the background color of the dropdown button when the dropdown content is shown */
   .dropdownProfile:hover .dropbtnProfile {background-color: #FFD2D9;}
 
+
+
+/*
+=================
+Hasil Pencarian
+=================
+*/
+.hasilPencarian{
+	position: relative;
+    margin: 6.3% 0px -8% 6%;
+    background-color: transparent;
+    padding: 1.3% 1px 1px 1px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-family: 'Kodchasan', sans-serif;
+    font-weight: bold;
+ }
+
+ li{
+	margin: -1px 6% 5px 0%;
+    padding: 8px 0px 8px 0px;
+ }
+ 
+ .cari{
+	display: none;
+	background-color: white;
+	border-radius: 20px;
+	padding-left: 1%;
+ }
+
+ .refCari{
+	 margin-left: -7px;
+ }
+
 /*
 =================
 Window
@@ -237,10 +271,7 @@ Window
     position: relative;
     width: 89%;
     height: auto;
-    /* left: 99px; */
-    /* top: 100px; */
-    margin: 90px 0px 20px 6%;
-    /* padding-bottom: 15px; */
+    margin: 9% 0px 20px 6%;
     font-family: 'Open Sans Condensed', sans-serif;
     background-color: #F6E8EA;
     border-radius: 20px;

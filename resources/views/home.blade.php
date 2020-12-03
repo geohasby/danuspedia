@@ -22,9 +22,9 @@
           <div class="dropdown">
             <button onclick="KategoriDrop()" class="dropbtn" >Kategori <img class="segitiga" src="{{ asset('img/SegitigaHomepage.svg') }}"></button>
             <div id="kategoriDropdown" class="dropdown-content">
-              <a href="#">Makanan</a>
-              <a href="#">Minuman</a>
-              <a href="#">Others</a>
+              <a href="{{ url('category/makanan') }}">Makanan</a>
+              <a href="{{ url('category/minuman') }}">Minuman</a>
+              <a href="{{ url('category/lain-lain') }}">Others</a>
             </div>
           </div>
           <div class="dropdown"style="margin-left: 30px;">
@@ -53,13 +53,22 @@
           </button>
           <div id="profileDropdown" class="dropdownProfile-content">
             <a href="#">Profile</a>
-            <a href="#">Logout</a>
+            <form method="POST" action="{{ route('logout') }}">
+              @csrf
+              <a type="submit" href="route('logout')" onclick="event.preventDefault();this.closest('form').submit();">Logout</a>
+            </form>
+            </form>
           </div>
         </div>
       </div>
     </div>
   </div>
   
+  <div class="hasilPencarian">
+      <li class="cari">ashjdajsdhka
+        <span class="refCari">nama_kategori</span>
+      </li>
+  </div>
   
   <div class="products-container">
   @foreach ($product as $p)
@@ -130,10 +139,6 @@
       document.getElementById("organisasiDropdown").classList.toggle("show");
     }
 
-    function searchSomething(){
-      var searchMe = document.getElementById("searchThis").value;
-      alert(searchMe);
-    }
     // Close the dropdown menu if the user clicks outside of it
     window.onclick = function(event) {
       if (!event.target.matches('.dropbtn')) {

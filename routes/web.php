@@ -24,9 +24,8 @@ Route::get('/home', [ProductController::class, 'index'])->middleware('auth', 've
 
 require __DIR__.'/auth.php';
 
-Route::resource('danus', DanusController::class);
-
 Route::resource('product', ProductController::class);
+Route::get('{mode}/{keyword}', [ProductController::class, 'search']);
 
 Route::resource('order', OrderController::class);
 
