@@ -42,13 +42,14 @@
           <div class="dropdown"style="margin-left: 30px;">
             <button onclick="OrganisasiDrop()" class="dropbtn" >Organisasi <img class="segitiga" src="{{ asset('img/SegitigaHomepage.svg') }}"></button>
             <div id="organisasiDropdown" class="dropdown-content">
-              <a href="#">BEM</a>
-              <a href="#">DPM</a>
-              <a href="#">LSIS</a>
-              <a href="#">OmahTI</a>
-              <a href="#">SBA</a>
-              <a href="#">Teater empat</a>
-              <a href="#">Pasains</a>
+              <a href="{{ url('organisasi/HIMAKOM') }}">HIMAKOM</a>
+              <!-- <a href="{{ url('organisasi/HMEI') }}">HMEI</a>
+              <a href="{{ url('organisasi/HIMATIKA') }}">HIMATIKA</a>
+              <a href="{{ url('organisasi/HIMASTA') }}">HIMASTA</a>
+              <a href="{{ url('organisasi/HIMARIA') }}">HIMARIA</a>
+              <a href="{{ url('organisasi/HIMAFI') }}">HIMAFI</a>
+              <a href="{{ url('organisasi/HMGF') }}">HMGF</a>
+              <a href="{{ url('organisasi/KMK') }}">KMK</a> -->
             </div>
           </div>
         </div>

@@ -147,8 +147,9 @@ class ProductController extends Controller
             $product = Product::where('category', $keyword)->get();
         }
         elseif ($mode == 'organisasi') {
-            $seller = Seller::where('name', $keyword)->get();
-            $product = Product::where('seller_id', $seller->first()->id);
+            $seller = User::all();
+            $seller_id = $seller->where('name', $keyword)->first()->id;
+            $product = Product::where('seller_id', $seller_id)->get();
         }
 
         return view('home', compact('product', 'seller', 'mode', 'keyword'))
