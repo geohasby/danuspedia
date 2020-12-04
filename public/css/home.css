@@ -62,9 +62,8 @@ Header
 	color: black;
 	padding: 16px;
 	border: none;
-	margin-right: -10px;
-	margin-top: -10px;
-	font-size: 45px;
+	margin: 0px -28px 0px -13px;
+	font-size: 30px;
 	outline: none;
 	cursor: pointer;
 	}
@@ -83,7 +82,7 @@ Header
   /* Dropdown Content (Hidden by Default) */
   .dropdown-content {
 	display: none;
-	font-size: 45px;
+	font-size: 30px;
 	position: absolute;
 	background-color: #f1f1f1;
 	min-width: 130px;
@@ -109,6 +108,9 @@ Header
   .dropdown:hover .dropbtn {background-color: #FFD2D9;
 }
 
+#kategoriDropdown,#organisasiDropdown{
+	margin-left: -10px;
+}
 .wrapper{
 	position: absolute;
     top: 50%;

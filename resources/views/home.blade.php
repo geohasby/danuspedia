@@ -28,12 +28,27 @@
             </div>
           </div>
           <div class="dropdown"style="margin-left: 30px;">
+            <button onclick="HimaDrop()" class="dropbtn" >Himpunan <img class="segitiga" src="{{ asset('img/SegitigaHomepage.svg') }}"></button>
+            <div id="himpunanDropdown" class="dropdown-content">
+              <a href="#">Himatika</a>
+              <a href="#">Himasta</a>
+              <a href="#">Himaria</a>
+              <a href="#">Himakom</a>
+              <a href="#">Himei</a>
+              <a href="#">Himafis</a>
+              <a href="#">Hmgf</a>
+            </div>
+          </div>
+          <div class="dropdown"style="margin-left: 30px;">
             <button onclick="OrganisasiDrop()" class="dropbtn" >Organisasi <img class="segitiga" src="{{ asset('img/SegitigaHomepage.svg') }}"></button>
             <div id="organisasiDropdown" class="dropdown-content">
-              <a href="#">Himakom</a>
-              <a href="#">Himasta</a>
-              <a href="#">HimaGeo</a>
-              <a href="#">Himahima</a>
+              <a href="#">BEM</a>
+              <a href="#">DPM</a>
+              <a href="#">LSIS</a>
+              <a href="#">OmahTI</a>
+              <a href="#">SBA</a>
+              <a href="#">Teater empat</a>
+              <a href="#">Pasains</a>
             </div>
           </div>
         </div>
@@ -146,6 +161,22 @@
           }
         }
       document.getElementById("organisasiDropdown").classList.toggle("show");
+    }
+
+    function HimaDrop(){
+      if(document.getElementById("himpunanDropdown").classList.contains('show')){
+        document.getElementById("himapunanDropdown").classList.remove('show');
+        return;
+      }
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      document.getElementById("himpunanDropdown").classList.toggle("show");
     }
 
     // Close the dropdown menu if the user clicks outside of it
