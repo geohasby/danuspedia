@@ -135,10 +135,11 @@ class ProductController extends Controller
 
 
     // SEARCHING
-    public function search(Request $request, $mode, $keyword)
+    public function search(Request $request, $mode, $keyword=null)
     {
         if ($mode == 'search') {
             $seller = User::all();
+            $keyword = $request->keyword;
             $product = Product::where('name', 'like', "%".$keyword."%")->get();
         }
         elseif ($mode == 'category') {
