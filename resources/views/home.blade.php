@@ -4,8 +4,9 @@
 <head>
   <title>Danuspedia</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="shortcut icon" href="{{ asset('img/iconWeb.svg' )}}" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Kodchasan:wght@200&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet" type ='text/css'>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/home.css') }}">
 </head>
 <body>

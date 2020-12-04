@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <title>Sign Up</title>
             <link rel="stylesheet" href="{{ asset('css/register.css') }}">
+            <link rel="shortcut icon" href="{{ asset('img/iconWeb.svg' )}}" type="image/x-icon">
             <link rel="preconnect" href="https://fonts.gstatic.com">
             <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet" type ='text/css'>
     </head>
