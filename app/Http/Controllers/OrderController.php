@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\Order;
 use Illuminate\Http\Request;
 
@@ -35,7 +36,25 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'quantity' => 'required|numeric',
+            'time_taken' => 'required',
+            'place_taken' => 'required|string'
+        ]);
+        
+        $stock = Product::find($request->product_id)->stock;
+        
+        if($stock >= $request->quantity){
+            $stock -= $request->quantity;
+            Product::find($request->product_id)->update(['stock' => $stock]);
+            Order::create($request->all());
+            return redirect()->route('home')
+                            ->with('success', 'Order created successfully');
+        }
+        else{
+            return redirect()->route('home')
+                            ->with('error', 'Sorry, out of stock');
+        }
     }
 
     /**

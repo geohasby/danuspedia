@@ -18,8 +18,9 @@ class CreateOrdersTable extends Migration
             $table->foreignId('customer_id');
             $table->foreignID('product_id');
             $table->bigInteger('quantity');
+            $table->dateTime('time_taken');
+            $table->string('place_taken');
             $table->string('status')->default('belum dibayar');
-            $table->string('comments')->nullable();
             $table->timestamps();
         });
     }

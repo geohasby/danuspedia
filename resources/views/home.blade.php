@@ -75,6 +75,16 @@
     </div>
   </div>
   
+  @if ($message = Session::get('success'))
+    <div class="dikasih_kotakan_warna_ijo_ya_jril">
+      <p>{{ $message }}</p>
+    </div>
+  @elseif ($message = Session::get('error'))
+    <div class="dikasih_kotakan_warna_merah_ya_jril">
+      <p>{{ $message }}</p>
+    </div>
+  @endif
+
   @isset($keyword)
     <div class="hasilPencarian">
         <li class="cari">

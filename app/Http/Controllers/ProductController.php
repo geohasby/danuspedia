@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redis;
 use Image;
 
 class ProductController extends Controller
@@ -66,7 +67,7 @@ class ProductController extends Controller
         
         Product::create($request->all());
 
-        return redirect()->route('product.index')
+        return redirect()->route('home')
                         ->with('success', 'Product created successfully');
     }
 
@@ -76,10 +77,10 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
         $product = Product::find($id);
-        return view('product.show', compact('product'));
+        return view('product.show', compact('product'), ['user' => $request->user()]);
     }
 
     /**
@@ -129,7 +130,7 @@ class ProductController extends Controller
 
         Product::find($id)->update($request->all());
 
-        return redirect()->route('product.index')
+        return redirect()->route('home')
                         ->with('success', 'Product updated successfully');
     }
 
@@ -173,7 +174,7 @@ class ProductController extends Controller
     {
         Product::find($id)->delete();
 
-        return redirect()->route('product.index')
+        return redirect()->route('home')
                         ->with('success', 'Product deleted successfully');
     }
 }

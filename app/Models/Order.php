@@ -13,7 +13,8 @@ class Order extends Model
         'customer_id',
         'product_id',
         'quantity',
-        'status',
-        'comments'
+        'time_taken',
+        'place_taken',
+        'status'
     ];
 }
