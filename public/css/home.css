@@ -60,9 +60,9 @@ Header
 .dropbtn {
 	background-color: inherit;
 	color: black;
-	padding: 16px;
+	padding: 32px 16px;
 	border: none;
-	margin: 0px -28px 0px -13px;
+	margin: -16px -28px 0px -13px;
 	font-size: 30px;
 	outline: none;
 	cursor: pointer;
@@ -115,7 +115,7 @@ Header
 .wrapper{
 	position: absolute;
     top: 50%;
-    left: 64%;
+    left: 64.5%;
     transform: translate(-50%, -50%);
     background: white;
     width: 58%;
@@ -163,7 +163,7 @@ Header
 }
 
 .title-bar-right {
-    margin-top: -49px;
+    margin-top: -66px;
     margin-right: -40%;
 	float: right;
 }
@@ -172,7 +172,6 @@ Header
 #LineRight{
 	position: absolute;
     margin-top: -18px;
-    margin-left: -15px;
     width: 2px;
     height: 70%;
 	background-color: black;
@@ -180,12 +179,13 @@ Header
   /* Dropdown Button */
 .dropbtnProfile {
 	background-color: inherit;
-	color: white;
-	padding: 29px 23px 5px 25px;
-	border: none;
-	margin-top: -9px;
-	outline: none;
-	cursor: pointer;
+	padding: 52px 11px 26px 41px;
+    border: none;
+    border-radius: 0px 20px 20px 0px;
+    margin-top: -33px;
+    margin-left: 3px;
+    outline: none;
+    cursor: pointer;
   }
   .UserLogo{
 	position: relative;
