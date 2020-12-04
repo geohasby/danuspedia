@@ -37,14 +37,12 @@
             </div>
           </div>
         </div>
-        <div class="wrapper">
-          <form method="GET" action="{{ url('search') }}">
+          <form class="wrapper"method="GET" action="{{ url('search') }}">
             <input type="text" name="keyword" class="input" id="searchThis" placeholder="What are you looking for?">
             <button type="submit" class="searchbtn" onclick="searchSomething()">
               <img class="fas" src="{{ asset('img/SearchHomepage.svg') }}">
             </button>
           </form>
-        </div>
       </div>
       <div class="title-bar-right">
         <div id="LineRight"></div>
