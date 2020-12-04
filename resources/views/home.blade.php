@@ -200,7 +200,6 @@
       var rect = segitigaOrganisasi.getBoundingClientRect();
       var y=rect.left;
       if(y<450 && normalWindow){
-        console.log(y);
         document.getElementById("kotakSearch").classList.toggle("kecilinSearch");
         normalWindow = false;
       }
