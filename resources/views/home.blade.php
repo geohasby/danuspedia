@@ -64,12 +64,22 @@
     </div>
   </div>
   
-  <div class="hasilPencarian">
-      <li class="cari">ashjdajsdhka
-        <span class="refCari">nama_kategori</span>
-      </li>
-  </div>
-  
+  @isset($keyword)
+    <div class="hasilPencarian">
+        <li class="cari">
+          <span class="refCari">
+          @if ($mode == 'search')
+            Hasil Pencarian : 
+          @elseif ($mode == 'category')
+            Kategori : 
+          @elseif ($mode == 'organisasi')
+            Organisasi : 
+          @endif  
+          "{{$keyword}}"</span>
+        </li>
+    </div>
+  @endisset
+
   <div class="products-container">
   @foreach ($product as $p)
     @php

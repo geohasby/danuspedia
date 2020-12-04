@@ -150,7 +150,7 @@ class ProductController extends Controller
             $product = Product::where('seller_id', $seller->first()->id);
         }
 
-        return view('home', compact('product', 'seller'))
+        return view('home', compact('product', 'seller', 'mode', 'keyword'))
                     ->with('i');
     }
 
