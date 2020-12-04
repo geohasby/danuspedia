@@ -188,9 +188,10 @@ Header
     width: 40px;
  }
  .segitigaRight{
-    position: absolute;
-    margin-top: -25px;
-    margin-left: 20px;
+	position: relative;
+	margin-bottom: 5px;
+    top: -6px;
+    margin-left: 6px;
     max-width: 15px;
  } 
   /* The container <div> - needed to position the dropdown content */
