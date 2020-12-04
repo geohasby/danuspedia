@@ -12,6 +12,9 @@
         </div>
     </div>
  
+    <!-- Validation Errors -->
+    <x-auth-validation-errors class="mb-4" :errors="$errors" style="color:red;margin-left:20px;margin-top:30px;" />
+
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">

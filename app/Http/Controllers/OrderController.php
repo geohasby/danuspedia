@@ -37,8 +37,8 @@ class OrderController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'quantity' => 'required|numeric',
-            'time_taken' => 'required',
+            'quantity' => 'required|numeric|min:1',
+            'time_taken' => 'required|after:now',
             'place_taken' => 'required|string'
         ]);
         
