@@ -142,6 +142,9 @@ class ProductController extends Controller
             $seller = User::all();
             $keyword = $request->keyword;
             $product = Product::where('name', 'like', "%".$keyword."%")->get();
+            if($product->first() == null){
+                $product = null;
+            }
         }
         elseif ($mode == 'category') {
             $seller = User::all();
