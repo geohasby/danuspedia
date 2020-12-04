@@ -56,7 +56,7 @@ Header
     background-color: black;
 }
 
-/* Dropdown Button */
+/* Dropdown Button Normal */
 .dropbtn {
 	background-color: inherit;
 	color: black;
@@ -76,7 +76,8 @@ Header
 
   .segitiga{
 	  position: relative;
-	  margin-bottom: 7px;
+	  margin-bottom: 3px;
+	  margin-left: -6px;
   }
   
   /* Dropdown Content (Hidden by Default) */
@@ -114,16 +115,21 @@ Header
 .wrapper{
 	position: absolute;
     top: 50%;
-    left: 66%;
+    left: 64%;
     transform: translate(-50%, -50%);
     background: white;
-    width: 55%;
+    width: 58%;
     padding: 7px 7px 7px 0px;
     display: flex;
     border-radius: 30px;
 }
 
-.wrapper .input {
+.kecilinSearch{	
+	left: 70%;
+	width: 43%;
+}
+
+.input {
     width: 85%;
     padding: 15px 20px;
     border: none;
@@ -345,6 +351,12 @@ Window
 	text-align: left;
 	margin: -15px 0px -5px 36px;
 	font-size: 17px;
+}
+
+.tidakDitemukan{
+	font-family: 'Kodchasan',sans-serif;
+	font-weight: lighter;
+	margin-left: 30px;
 }
 
 

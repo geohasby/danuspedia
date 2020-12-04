@@ -42,14 +42,14 @@
             </div>
           </div>
           <div class="dropdown"style="margin-left: 30px;">
-            <button onclick="OrganisasiDrop()" class="dropbtn" >Organisasi <img class="segitiga" src="{{ asset('img/SegitigaHomepage.svg') }}"></button>
+            <button onclick="OrganisasiDrop()" class="dropbtn">Organisasi <img class="segitiga" id="segitigaOrganisasi" src="{{ asset('img/SegitigaHomepage.svg') }}"></button>
             <div id="organisasiDropdown" class="dropdown-content">
               <a href="">ORKOM</a>
               <a href="">OTI</a>
             </div>
           </div>
         </div>
-          <form class="wrapper"method="GET" action="{{ url('search') }}">
+          <form class="wrapper" id="kotakSearch" method="GET" action="{{ url('search') }}">
             <input type="text" name="keyword" class="input" id="searchThis" placeholder="What are you looking for?">
             <button type="submit" class="searchbtn" onclick="searchSomething()">
               <img class="fas" src="{{ asset('img/SearchHomepage.svg') }}">
@@ -125,7 +125,7 @@
       @endif
     @endforeach
   @else
-    <h1>tidak ditemukan</h1>
+    <h1 class="tidakDitemukan">tidak ditemukan</h1>
   @endisset
   </div>
 
@@ -193,6 +193,23 @@
         }
       }
     }
+    var normalTimer = setInterval(cekOverlap, 100);
+    var normalWindow = true;
+    function cekOverlap(){
+      var segitigaOrganisasi = document.getElementById("segitigaOrganisasi");
+      var rect = segitigaOrganisasi.getBoundingClientRect();
+      var y=rect.left;
+      if(y<450 && normalWindow){
+        console.log(y);
+        document.getElementById("kotakSearch").classList.toggle("kecilinSearch");
+        normalWindow = false;
+      }
+      else if(y>450 && !normalWindow){
+        document.getElementById("kotakSearch").classList.toggle("kecilinSearch");
+        normalWindow = true;
+      }
+    }
+    
   </script>
 </body>
 </html>
