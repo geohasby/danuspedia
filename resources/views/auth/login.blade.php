@@ -29,8 +29,8 @@
             <div class="registerInfo">
                 <label>Doesn't have account?</label>
                 <br>
-                <label id="register" name="signIn">
-                    <a href="{{ route('register') }}">Register here~</a>
+                <label name="signIn">
+                    <a id="register" href="{{ route('register') }}">Register here~</a>
                 </label>
             </div>
         </form>

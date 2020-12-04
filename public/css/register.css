@@ -44,7 +44,6 @@ input[type="password"],
 input[type="email"],
 input[type="tel"] 
 {
-  /* background: rgba(255,255,255,0.1); */
   border-radius: 18px;
   font-size: 16px;
   height: auto;
@@ -55,6 +54,15 @@ input[type="tel"]
   color: black;
   margin-bottom: 8px;
   border: none;
+  outline: none;
+  transition: 0.2s;
+}
+
+input[type=password]:focus,
+input[type="email"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus{
+  border: 2px solid rgb(0, 0, 0);
 }
 
 #confirmPassword
@@ -86,6 +94,12 @@ button {
   background: #0FCDE7;
   box-sizing: border-box;
   border-radius: 30px;
+  outline: none;
+  cursor: pointer;
+}
+
+button:hover{
+  background-color: #05b3ca;
 }
 
 fieldset {
@@ -106,20 +120,19 @@ label {
   padding-bottom: -50%;
   bottom: 10px;
   font-size: 80%;
-  /* margin-top: -500px; */
 }
 #signIn,
 #more{
-  text-decoration: underline;
   color: blue;
+  cursor: pointer;
+  text-decoration: none;
 }
-/* .telor{
-  position: sticky;
-  width: 76.65px;
-  height: 116.67px;
-  left: 0%;
-  top: 0%;
-} */
+
+#signIn:hover,
+#more:hover{
+  text-decoration: underline;
+  color: rgb(0, 0, 134);
+}
 
 @media screen and (min-width: 480px) {
 

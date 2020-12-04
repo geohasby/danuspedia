@@ -36,8 +36,8 @@
         <div class="signInInfo">
             <label>Already have account?</label>
             <br>
-                <label id="signIn" name="signIn">
-                    <a href="{{ route('login') }}">Sign-in here~</a>
+                <label name="signIn">
+                    <a id="signIn" href="{{ route('login') }}">Sign-in here~</a>
                 </label>
             <br>
             <label id="more" name="more">More</label>
