@@ -73,17 +73,17 @@
         </div>
       </div>
     </div>
-  </div>
-  
-  @if ($message = Session::get('success'))
-    <div class="dikasih_kotakan_warna_ijo_ya_jril">
-      <p>{{ $message }}</p>
+  </div>    
+
+  <!-- @if ($message = Session::get('success')) -->
+    <div id="successBuy">
+        <p id="hasilOrder">{{ $message }}</p>
     </div>
-  @elseif ($message = Session::get('error'))
-    <div class="dikasih_kotakan_warna_merah_ya_jril">
-      <p>{{ $message }}</p>
+  <!-- @elseif ($message = Session::get('error')) -->
+    <div id="failBuy" >
+      <p id="hasilOrder">{{ $message }}</p>
     </div>
-  @endif
+  <!-- @endif -->
 
   @isset($keyword)
     <div class="hasilPencarian">
@@ -218,7 +218,19 @@
         normalWindow = true;
       }
     }
+
+    if(document.getElementById("successBuy") != null){
+      var kelas = "successBuy";
+      setTimeout(fading,3000);
+    }
+    else if(document.getElementById("failBuy") != null){
+      var kelas = "failBuy"
+      setTimeout(fading,3000);
+    }
     
+    function fading(){
+      document.getElementById(kelas).classList.toggle("gone");
+    }
   </script>
 </body>
 </html>

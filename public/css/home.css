@@ -359,6 +359,35 @@ Window
 	margin-left: 30px;
 }
 
+#successBuy,
+#failBuy{
+	background-color: lightgreen;
+    position: fixed;
+    width: 25%;
+    height: 16%;
+    top: 20%;
+    z-index: 1;
+    left: 39%;
+	text-align: center;
+	border-radius: 20px;
+	pointer-events: none;
+}
+#failBuy{
+	background-color: rgb(255, 96, 96);
+}
+
+.gone{
+	transition: 3s;
+	opacity: 0%;
+}
+#successBuy,
+#failBuy .p{
+	vertical-align: middle;
+	display: inline-block;
+	font-family:'Kodchasan', sans-serif;
+    line-height: 3;
+    font-size: 22px;
+}
 
 
 
