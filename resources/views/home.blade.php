@@ -31,26 +31,21 @@
           <div class="dropdown"style="margin-left: 30px;">
             <button onclick="HimaDrop()" class="dropbtn" >Himpunan <img class="segitiga" src="{{ asset('img/SegitigaHomepage.svg') }}"></button>
             <div id="himpunanDropdown" class="dropdown-content">
-              <a href="#">Himatika</a>
-              <a href="#">Himasta</a>
-              <a href="#">Himaria</a>
-              <a href="#">Himakom</a>
-              <a href="#">Himei</a>
-              <a href="#">Himafis</a>
-              <a href="#">Hmgf</a>
-            </div>
-          </div>
-          <div class="dropdown"style="margin-left: 30px;">
-            <button onclick="OrganisasiDrop()" class="dropbtn" >Organisasi <img class="segitiga" src="{{ asset('img/SegitigaHomepage.svg') }}"></button>
-            <div id="organisasiDropdown" class="dropdown-content">
               <a href="{{ url('organisasi/HIMAKOM') }}">HIMAKOM</a>
-              <!-- <a href="{{ url('organisasi/HMEI') }}">HMEI</a>
+              <a href="{{ url('organisasi/HMEI') }}">HMEI</a>
               <a href="{{ url('organisasi/HIMATIKA') }}">HIMATIKA</a>
               <a href="{{ url('organisasi/HIMASTA') }}">HIMASTA</a>
               <a href="{{ url('organisasi/HIMARIA') }}">HIMARIA</a>
               <a href="{{ url('organisasi/HIMAFI') }}">HIMAFI</a>
               <a href="{{ url('organisasi/HMGF') }}">HMGF</a>
-              <a href="{{ url('organisasi/KMK') }}">KMK</a> -->
+              <a href="{{ url('organisasi/KMK') }}">KMK</a>
+            </div>
+          </div>
+          <div class="dropdown"style="margin-left: 30px;">
+            <button onclick="OrganisasiDrop()" class="dropbtn" >Organisasi <img class="segitiga" src="{{ asset('img/SegitigaHomepage.svg') }}"></button>
+            <div id="organisasiDropdown" class="dropdown-content">
+              <a href="">ORKOM</a>
+              <a href="">OTI</a>
             </div>
           </div>
         </div>
@@ -97,37 +92,41 @@
   @endisset
 
   <div class="products-container">
-  @foreach ($product as $p)
-    @php
-      ++$i;
-    @endphp
-    
-    @if ($i % 4 == 1)
-      <div class="photo-column">
-    @endif
+  @isset($product)  
+    @foreach ($product as $p)
+      @php
+        ++$i;
+      @endphp
+      
+      @if ($i % 4 == 1)
+        <div class="photo-column">
+      @endif
 
-    <div class="photo-container">
-      <div class="overlayContainer">
-        <a href="{{ route('product.show',$p->id) }}">
-          <img src="{{ asset('img/product/' . $p->image) }}" class="fotoBarang">
-        </a>
-        <div class="overlay">
-          <div class="beliBarangIni">Beli barang ini</div>
+      <div class="photo-container">
+        <div class="overlayContainer">
+          <a href="{{ route('product.show',$p->id) }}">
+            <img src="{{ asset('img/product/' . $p->image) }}" class="fotoBarang">
+          </a>
+          <div class="overlay">
+            <div class="beliBarangIni">Beli barang ini</div>
+          </div>
         </div>
+        <div class="LineBelowImage"></div>
+        <img class="iconDeskripsi" src="{{ asset('img/' . $p->category . 'Homepage.svg') }}">
+        <p class="deskripsiBarang" id="namaBarang">{{$p->name}}</p>
+        <img class="iconDeskripsi"src="{{ asset('img/MoneyHomepage.svg') }}">
+        <p class="deskripsiBarang" id="hargaBarang">{{$p->price}}</p>
+        <img class="iconDeskripsi" src="{{ asset('img/UserHomepage.svg') }}" style="margin-bottom:-12px;">
+        <p class="deskripsiBarang" id="penjualBarang">{{$seller->find($p->seller_id)->name}}</p>
       </div>
-      <div class="LineBelowImage"></div>
-      <img class="iconDeskripsi" src="{{ asset('img/' . $p->category . 'Homepage.svg') }}">
-      <p class="deskripsiBarang" id="namaBarang">{{$p->name}}</p>
-      <img class="iconDeskripsi"src="{{ asset('img/MoneyHomepage.svg') }}">
-      <p class="deskripsiBarang" id="hargaBarang">{{$p->price}}</p>
-      <img class="iconDeskripsi" src="{{ asset('img/UserHomepage.svg') }}" style="margin-bottom:-12px;">
-      <p class="deskripsiBarang" id="penjualBarang">{{$seller->find($p->seller_id)->name}}</p>
-    </div>
-    
-    @if ($i % 4 == 0)
-      </div>     
-    @endif
-  @endforeach
+      
+      @if ($i % 4 == 0)
+        </div>     
+      @endif
+    @endforeach
+  @else
+    <h1>tidak ditemukan</h1>
+  @endisset
   </div>
 
   <script>
