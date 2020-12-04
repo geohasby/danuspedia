@@ -20,8 +20,8 @@
                 <label for="name">Full Name : </label>
                 <input type="text" name="name" required placeholder="Enter your full name">
                 <br>
-                <label for="email">Email (UGM) : </label>
-                <input type="email" name="email" id="email" required placeholder="Enter your UGM Email">
+                <label for="email">Email : </label>
+                <input type="email" name="email" id="email" required placeholder="Enter your Email">
                 <br>
                 <label for="phone_number">Phone number :</label>
                 <input type="tel" name="phone_number" id="phone_number" required placeholder="Enter your mobile phone number">

@@ -13,9 +13,11 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index_order(Request $request, $job)
     {
-        //
+        $order = Order::where($job . '_id', $request->user()->id)->get();
+        return view('belumtaumaukemana', compact('order'))
+                    ->with('i');
     }
 
     /**
@@ -55,6 +57,14 @@ class OrderController extends Controller
             return redirect()->route('home')
                             ->with('error', 'Sorry, out of stock');
         }
+    }
+
+    public function konfirmasi_penjual(Request $request){
+        Order::find($request->id)->update(['status' => 'menunggu dikirim']);
+    }
+
+    public function order_diterima(Request $request){
+        Order::find($request->id)->update(['status' => 'order sudah selesai']);
     }
 
     /**
@@ -97,8 +107,11 @@ class OrderController extends Controller
      * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Order $order)
+    public function destroy($id)
     {
-        //
+        Order::find($id)->delete();
+
+        return redirect()->route('home')
+                        ->with('success', 'Order deleted successfully');
     }
 }
