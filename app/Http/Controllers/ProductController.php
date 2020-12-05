@@ -15,11 +15,11 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $product = Product::all();
         $seller = User::all();
-        return view('home', compact('product', 'seller'))
+        return view('home', compact('product', 'seller'), ['user' => $request->user()])
                     ->with('i');
     }
 
@@ -77,11 +77,11 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request, $id)
-    {
-        $product = Product::find($id);
-        return view('product.show', compact('product'), ['user' => $request->user()]);
-    }
+    // public function show(Request $request, $id)
+    // {
+    //     $product = Product::find($id);
+    //     return view('product.show', compact('product'), ['user' => $request->user()]);
+    // }
 
     /**
      * Show the form for editing the specified resource.
