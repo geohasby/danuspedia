@@ -75,15 +75,15 @@
     </div>
   </div>    
 
-  <!-- @if ($message = Session::get('success')) -->
+  @if ($message = Session::get('success'))
     <div id="successBuy">
         <p id="hasilOrder">{{ $message }}</p>
     </div>
-  <!-- @elseif ($message = Session::get('error')) -->
+  @elseif ($message = Session::get('error'))
     <div id="failBuy" >
       <p id="hasilOrder">{{ $message }}</p>
     </div>
-  <!-- @endif -->
+  @endif
 
   @isset($keyword)
     <div class="hasilPencarian">
