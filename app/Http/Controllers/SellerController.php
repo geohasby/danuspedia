@@ -19,8 +19,8 @@ class SellerController extends Controller
     {
         $user = User::all();
         $product = Product::where('seller_id', $request->user()->id)->get();
-        $order = DB::table('orders')
-                        ->join('products', 'orders.product_id', '=', 'products.id')
+        $order = DB::table('products')
+                        ->join('orders', 'products.id', '=', 'orders.product_id')
                         ->where('products.seller_id', $request->user()->id)
                         ->get();
         //IF PRODUCT / ORDER NULL

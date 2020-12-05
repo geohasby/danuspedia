@@ -20,34 +20,36 @@ reset.addEventListener('click', function() {
 });
 
 //FUNGSI KONFIRMASI DAN POPUP//
+const id_order = document.getElementsByClassName('order_id');
 const cancel = document.getElementsByClassName('cancel-order');
 const confirms = document.getElementsByClassName('complete-order');
 const yes = document.getElementById('yes');
 const no = document.getElementById('no');
 const popup = document.getElementById('pop-up');
 
+var arrOrderID = Array.from(id_order);
 var arrCancel = Array.from(cancel);
 var arrConfirms = Array.from(confirms);
-for(var i=0;i<cancel.length;i++){
+for(var i=0; i<cancel.length; i++){
     cancel[i].addEventListener('click', function(event) {
         popup.style.display = 'block';
-        var iniYangDiKlik = arrCancel.indexOf(event.target);
-        alert(iniYangDiKlik);
+        var orderID = arrOrderID[arrCancel.indexOf(event.target)].innerHTML;
     });
 }
-for(var i=0;i<cancel.length;i++){
+for(var i=0; i<confirms.length; i++){
     confirms[i].addEventListener('click', function(event) {
         popup.style.display = 'block';
-        var iniYangDiKlik = arrConfirms.indexOf(event.target);
-        alert(iniYangDiKlik);
+        var orderID = arrOrderID[arrConfirms.indexOf(event.target)].innerHTML;
+
+        yes.href = "{{ route() }}";
+        no.href = "yahoo.com"+orderID;
+
+        yes.addEventListener('click', function() {
+            alert('yes');
+        });
+
+        no.addEventListener('click', function() {
+            alert('no');
+        });
     });
 }
-
-yes.addEventListener('click', function() {
-    popup.style.display = 'none';
-    return true;
-});
-no.addEventListener('click', function() {
-    popup.style.display = 'none';
-    return false;
-});

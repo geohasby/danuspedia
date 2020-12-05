@@ -19,6 +19,7 @@
             <div class="list-pesanan">
                 @foreach ($order as $o)
                     <div class="pesanan">
+                        <p class="order_id" style="display:none;">{{ $o->id }}</p>
                         <h2>{{ $user->find($o->customer_id)->name }}</h2>
                         <div class="att-produk">
                             <div class="nama-produk">{{ $o->name }}</div>
@@ -88,8 +89,17 @@
         <div class="confirm bg-main">
             <span>Apakah Anda Yakin?</span>
             <div class="confirm-buttons to-right">
-                <button id="yes" class="yes-button"></button>
-                <button id="no" class="no-button"></button>
+                <form id="yes" method="POST" action="">
+                    @csrf
+                    <input type="hidden" value="">
+                    <button type="submit" class="yes-button"></button>
+                </form>
+                <form id="no" method="POST" action="">
+                    @csrf
+                    @method('DELETE')
+                    <input type="hidden" value="">
+                    <button type="submit" class="no-button"></button>
+                </form>
             </div>
         </div>
     </div>

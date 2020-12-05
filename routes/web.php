@@ -24,6 +24,7 @@ Route::get('seller/home', [SellerController::class, 'index'])->name('seller.home
 
 use App\Http\Controllers\OrderController;
 Route::resource('order', OrderController::class);
+Route::post('confirm_order', [OrderController::class, 'konfirmasi_penjual'])->name('confirm_order');
 
 use App\Http\Controllers\ProductController;
 Route::get('/home', [ProductController::class, 'index'])->middleware('auth', 'verified')->name('home');
