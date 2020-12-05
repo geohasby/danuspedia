@@ -543,7 +543,8 @@ Window
 .kuantitas button#tambah{
 	background-image: url('../img/plus.svg');
 }
-.kuantitas button#kurang{
+.kurang{
+	background-color: red;
 	background-image: url('../img/minus.svg');
 }
 .kuantitas-final{
