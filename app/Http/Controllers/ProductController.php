@@ -18,6 +18,7 @@ class ProductController extends Controller
     {
         $product = Product::where('stock', '>', 0)->get();
         $seller = User::all();
+        //IF PRODUCT / SELLER NULL
         return view('home', compact('product', 'seller'), ['user' => $request->user()])
                     ->with('i');
     }
@@ -161,7 +162,11 @@ class ProductController extends Controller
                 $product = null;
             }
         }
+        else {
+            return abort('404');
+        }
 
+        //IF PRODUCT NULL
         return view('home', compact('product', 'seller', 'mode', 'keyword'))
                     ->with('i');
     }

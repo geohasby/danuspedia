@@ -16,6 +16,7 @@ class OrderController extends Controller
     public function index_order(Request $request, $job)
     {
         $order = Order::where($job . '_id', $request->user()->id)->get();
+        //IF ORDER NULL
         return view('belumtaumaukemana', compact('order'))
                     ->with('i');
     }

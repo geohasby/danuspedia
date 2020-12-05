@@ -28,7 +28,7 @@ Route::resource('order', OrderController::class);
 use App\Http\Controllers\ProductController;
 Route::get('/home', [ProductController::class, 'index'])->middleware('auth', 'verified')->name('home');
 Route::resource('product', ProductController::class);
-Route::get('{mode}/{keyword?}', [ProductController::class, 'search']); //teruh paling bawah
+Route::get('{mode}/{keyword?}', [ProductController::class, 'search']); //taruh paling bawah
 
 
 

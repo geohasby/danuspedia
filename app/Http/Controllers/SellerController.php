@@ -23,6 +23,7 @@ class SellerController extends Controller
                         ->join('products', 'orders.product_id', '=', 'products.id')
                         ->where('products.seller_id', $request->user()->id)
                         ->get();
+        //IF PRODUCT / ORDER NULL
         return view('home_seller', compact('product', 'order'), ['user' => $request->user()]);
     }
 
