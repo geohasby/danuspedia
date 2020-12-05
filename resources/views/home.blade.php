@@ -139,69 +139,6 @@
   @endisset
   </div>
 
-    <!------------------------------------INI BUAT POPUP--------------------------------->
-    <div id="popup" class="popup-container">
-    <div class="popup">
-      <div class="first-section">
-        <div id="foto-barang-full" class="foto-barang-full"></div>
-        <a id="profile-penjual" href="#">
-          <div class="mini-profile-penjual">
-            <div id="foto-penjual" class="foto-penjual"></div>
-            <span id="nama-penjual">Nama_Organisasi</span>
-          </div>
-        </a>
-      </div> 
-      <div class="second-section">
-        <div class="profil-barang">
-          <div id="nama-barang" class="nama-barang">Kapak Kingmaker Kecil</div>
-          <div class="stok-barang">Stok : <b id="stok-barang">2</b></div>
-          <div class="harga-barang">
-            <div class="label">Harga</div>
-            <div id="harga-barang" class="nominal">Rp. 2,500</div>
-          </div>
-          <div class="deskripsi-produk">
-            <div class="label">Deskripsi</div>
-            <div id="deskripsi-barang" class="deskripsi">
-              Kapak Kepik Kepak Kipik Kupuk-Kupuk Watdepuk
-            </div>
-          </div>
-        </div>
-        <form action onsubmit="">
-          <div class="box-pesanan">
-            <div class="spesifikasi-pemesanan">
-              <div class="kuantitas">
-                <span>Jumlah Dibeli</span>
-                <button disabled id="kurang"></button>
-                <div id="kuantitas-beli" class="kuantitas-final">1</div>
-                <button id="tambah"></button>
-              </div>
-              <div class="lokasi">
-                <label for="lokasi">Lokasi Pengambilan :</label>
-                <select required name="Lokasi" id="lokasi">
-                  <option disabled selected value="null">Pilih Lokasi Pengambilan Barang</option>
-                  <option value="selasar-c">Selasar Gedung C</option>
-                  <option value="sekrehima">Sekre Hima</option>
-                </select>
-              </div>
-              <div class="waktu">
-                <label for="waktu">Waktu Pengambilan</label>
-                <input type="datetime-local" id="waktu">
-              </div>
-              
-              <button id="checkout" type="submit">Beli Sekarang!</button>
-            </div>
-          </div>
-        </form>
-        
-      </div>   
-      <div class="exit">
-        <button id="exit"></button>
-      </div>
-    </div>
-  </div>
-  <!------------------------------------INI BUAT POPUP--------------------------------->
-
-
   <script>
       /* When the user clicks on the button,
     toggle between hiding and showing the dropdown content */
