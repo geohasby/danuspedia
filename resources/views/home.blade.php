@@ -115,7 +115,7 @@
       <div class="photo-container">
         <div class="overlayContainer">
           <a> <!--href="{{ route('product.show',$p->id) }}"  ini link nya barangkali butuh-->
-            <img src="{{ asset('img/product/' . $p->image) }}" class="fotoBarang barang">
+            <img id="barang" src="{{ asset('img/product/' . $p->image) }}" class="fotoBarang">
           </a>
           <div class="overlay">
             <div class="beliBarangIni">Beli barang ini</div>
@@ -123,11 +123,11 @@
         </div>
         <div class="LineBelowImage"></div>
         <img class="iconDeskripsi" src="{{ asset('img/' . $p->category . 'Homepage.svg') }}">
-        <p class="deskripsiBarang">{{$p->name}}</p>
+        <p class="deskripsiBarang" id="namaBarang">{{$p->name}}</p>
         <img class="iconDeskripsi"src="{{ asset('img/MoneyHomepage.svg') }}">
-        <p class="deskripsiBarang">{{$p->price}}</p>
+        <p class="deskripsiBarang" id="hargaBarang">{{$p->price}}</p>
         <img class="iconDeskripsi" src="{{ asset('img/UserHomepage.svg') }}" style="margin-bottom:-12px;">
-        <p class="deskripsiBarang">{{$seller->find($p->seller_id)->name}}</p>
+        <p class="deskripsiBarang" id="penjualBarang">{{$seller->find($p->seller_id)->name}}</p>
       </div>
       
       @if ($i % 4 == 0)
@@ -171,7 +171,7 @@
             <div class="spesifikasi-pemesanan">
               <div class="kuantitas">
                 <span>Jumlah Dibeli</span>
-                <button disabled class="kurang"></button>
+                <button disabled id="kurang"></button>
                 <div id="kuantitas-beli" class="kuantitas-final">1</div>
                 <button id="tambah"></button>
               </div>
@@ -296,23 +296,23 @@
     }
     //////////////////////////////////////////////////////////////////////
     ///////////////////////////INI BUAT POPUP/////////////////////////////
-    let kurang = document.getElementsByClassName('kurang');
+    let kurang = document.getElementById('kurang');
     let tambah = document.getElementById('tambah');
     let dibeli = document.getElementById('kuantitas-beli');
     let stok = document.getElementById('stok-barang').innerHTML;
     let keluar = document.getElementById('exit');
     let popup = document.getElementById('popup');
-    let benda = document.getElementsByClassName('barang')
+    let benda = document.getElementById('barang')
     if(dibeli.innerHTML == stok) tambah.disabled = true;
 
-    kurang[0].addEventListener('click', function() {
+    kurang.addEventListener('click', function() {
       dibeli.innerHTML -= 1;
-      if(dibeli.innerHTML == 1) kurang[0].disabled = true;
+      if(dibeli.innerHTML == 1) kurang.disabled = true;
       if(dibeli.innerHTML < stok) tambah.disabled = false;
     });
 
     tambah.addEventListener('click', function() {
-      kurang[0].disabled = false;
+      kurang.disabled = false;
       dibeli.innerHTML = parseInt(dibeli.innerHTML) + 1;
       if(dibeli.innerHTML >= stok) tambah.disabled = true;
     });
@@ -321,12 +321,9 @@
       popup.style.display = 'none';
     });
 
-    for(var i=0;i<benda.length;i++){
-        benda[i].addEventListener('click', function() {
-        popup.style.display = 'block';
-      });
-    }
-
+    benda.addEventListener('click', function() {
+      popup.style.display = 'block';
+    });
 
     //////////////////////////INI BUAT POPUP////////////////////////////
     ////////////////////////////////////////////////////////////////////
