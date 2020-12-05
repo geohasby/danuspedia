@@ -114,7 +114,11 @@
 
       <div class="photo-container">
         <div class="overlayContainer">
+<<<<<<< HEAD
           <a>
+=======
+          <a> <!--href="{{ route('product.show',$p->id) }}"  ini link nya barangkali butuh-->
+>>>>>>> parent of a4fa678... sabar
             <img id="barang" src="{{ asset('img/product/' . $p->image) }}" class="fotoBarang">
           </a>
           <div class="overlay">
