@@ -322,11 +322,12 @@
     });
 
     for(var i=0;i<benda.length;i++){
-        benda[i].addEventListener('click', function() {
-        popup.style.display = 'block';
+        benda[i].addEventListener('click', function(event) {
+          popup.style.display = 'block';
+          alert(arr.indexOf(event.target))
       });
     }
-
+    var arr = Array.from(benda);
 
     //////////////////////////INI BUAT POPUP////////////////////////////
     ////////////////////////////////////////////////////////////////////
