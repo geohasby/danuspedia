@@ -34,8 +34,8 @@
                             <h3>Tempat COD : {{ $o->place_taken }}</h3>
                         </div>
                         <div class="button-collection to-right">
-                            <button id="cancel-order" class="cancel-button"></button>
-                            <button id="complete-order" class="check-button"></button>
+                            <button class="cancel-button cancel-order"></button>
+                            <button class="check-button complete-order"></button>
                         </div>
                     </div>
                 @endforeach
@@ -58,7 +58,7 @@
                     @csrf
                         <a type="submit" href="route('logout')" onclick="event.preventDefault();this.closest('form').submit();"><div class="logout">Logout</div></a>
                     </form>
-                    <a href="#"><div class="edit-profile">Edit Profil</div>kalo ini dihapus, edit profilenya ilang oi</a>
+                    <a href="#" style="color: transparent; pointer-events: none;"><div class="edit-profile" style="pointer-events: auto;">Edit Profil</div>kalo ini dihapus, edit profilenya ilang oi</a>
                 </div>
             </div>
             <div class="main-content bg-main">        
@@ -72,10 +72,9 @@
                 @foreach ($product as $p)
                     <a href="#">
                         <div class="slot-barang">
-                            <div class="foto-barang"></div>
+                            <img class="foto-barang" src="{{ asset('img/product/' . $p->image) }}" alt="">
                             <div class="data-barang">
-                                <img src="{{ asset('img/product/' . $p->image) }}" alt="">
-                                <div class="nama-barang">{{ $p->name }}</div>
+                                <div class="nama-barang" >{{ $p->name }}</div>
                             </div>
                         </div>
                     </a>

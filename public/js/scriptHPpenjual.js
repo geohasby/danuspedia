@@ -20,18 +20,29 @@ reset.addEventListener('click', function() {
 });
 
 //FUNGSI KONFIRMASI DAN POPUP//
-const cancel = document.getElementById('cancel-order');
-const confirm = document.getElementById('complete-order');
+const cancel = document.getElementsByClassName('cancel-order');
+const confirms = document.getElementsByClassName('complete-order');
 const yes = document.getElementById('yes');
 const no = document.getElementById('no');
 const popup = document.getElementById('pop-up');
 
-cancel.addEventListener('click', function() {
-    popup.style.display = 'block';
-});
-confirm.addEventListener('click', function() {
-    popup.style.display = 'block';
-});
+var arrCancel = Array.from(cancel);
+var arrConfirms = Array.from(confirms);
+for(var i=0;i<cancel.length;i++){
+    cancel[i].addEventListener('click', function(event) {
+        popup.style.display = 'block';
+        var iniYangDiKlik = arrCancel.indexOf(event.target);
+        alert(iniYangDiKlik);
+    });
+}
+for(var i=0;i<cancel.length;i++){
+    confirms[i].addEventListener('click', function(event) {
+        popup.style.display = 'block';
+        var iniYangDiKlik = arrConfirms.indexOf(event.target);
+        alert(iniYangDiKlik);
+    });
+}
+
 yes.addEventListener('click', function() {
     popup.style.display = 'none';
     return true;
