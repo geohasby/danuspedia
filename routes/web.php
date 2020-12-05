@@ -1,9 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DanusController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,14 +17,18 @@ Route::get('/', function () {
     return redirect('login');
 });
 
-Route::get('/home', [ProductController::class, 'index'])->middleware('auth', 'verified')->name('home');
-
 require __DIR__.'/auth.php';
 
-Route::resource('product', ProductController::class);
-Route::get('{mode}/{keyword?}', [ProductController::class, 'search']);
+use App\Http\Controllers\SellerController;
+Route::get('seller/home', [SellerController::class, 'index'])->name('seller.home');
 
+use App\Http\Controllers\OrderController;
 Route::resource('order', OrderController::class);
+
+use App\Http\Controllers\ProductController;
+Route::get('/home', [ProductController::class, 'index'])->middleware('auth', 'verified')->name('home');
+Route::resource('product', ProductController::class);
+Route::get('{mode}/{keyword?}', [ProductController::class, 'search']); //teruh paling bawah
 
 
 

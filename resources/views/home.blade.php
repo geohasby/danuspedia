@@ -68,7 +68,6 @@
               @csrf
               <a type="submit" href="route('logout')" onclick="event.preventDefault();this.closest('form').submit();">Logout</a>
             </form>
-            </form>
           </div>
         </div>
       </div>

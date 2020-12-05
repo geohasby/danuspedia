@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Product;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redis;
 use Image;
 
 class ProductController extends Controller
@@ -17,7 +16,7 @@ class ProductController extends Controller
      */
     public function index(Request $request)
     {
-        $product = Product::all();
+        $product = Product::where('stock', '>', 0)->get();
         $seller = User::all();
         return view('home', compact('product', 'seller'), ['user' => $request->user()])
                     ->with('i');
@@ -77,11 +76,11 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    // public function show(Request $request, $id)
-    // {
-    //     $product = Product::find($id);
-    //     return view('product.show', compact('product'), ['user' => $request->user()]);
-    // }
+    public function show(Request $request, $id)
+    {
+        $product = Product::find($id);
+        return view('product.show', compact('product'), ['user' => $request->user()]);
+    }
 
     /**
      * Show the form for editing the specified resource.

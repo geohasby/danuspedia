@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kodchasan&family=Varela+Round&display=swap');
+
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background-color: #CEFFEA;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background-color: #FFF; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color:pink;
+  }
+
+body {
+    font-family: 'Open Sans Condensed', sans-serif;
+    background-image: url(../img/backgroundHomepage.svg);
+	background-attachment: fixed;
+    background-size: cover;
+    background-color: #CEFFEA;
+    background-repeat: no-repeat;
+
+}
+.content {
+    width: 86%;
+    margin: auto;
+    margin-top: 2%;
+    padding-left: 1%;
+}
+.bg-main {
+    background-color: #F6E8EA;
+}
+
+/*--------------------BAGIAN KIRI--------------------*/
+.detail-pesanan {
+    width: 30%;
+    height: 90%;
+    padding: 1%;
+    margin-right: 3%;
+    border-radius: 20px;
+    overflow: hidden;
+    position: fixed;
+}
+.detail-pesanan h1 {
+    font-size: 51px;
+    text-align: center;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 51px;
+    line-height: 69px;
+}
+.pencarian-nama {
+    height: 40px;
+    width: 95%;
+    margin: 2% 2%;
+}
+.pencarian-nama input{
+    height: 30px;
+    width: 88%;
+    margin-bottom: 7px;
+    padding: 5px 1%;
+    border-radius: 10px 0px 0px 10px;
+    border: transparent;
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 18px;
+    float: left;
+}
+#reset {
+    width: 10%;
+    height: 100%;
+    background-color: white;
+    background-image: url(../img/Cross.svg);
+    background-size: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: transparent;
+    float: left;
+    display: none;
+}
+#search{
+    width: 10%;
+    height: 100%;
+    border-radius: 0px 10px 10px 0px;
+    border: transparent;
+    background-color:pink;
+    background-image: url(../img/SearchHomepage.svg);
+    background-size: 32px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.list-pesanan {
+    height: 70%;
+    width : 100%;
+    overflow: hidden scroll;
+    border-bottom: 3px solid #CEFFEA;
+    border-top: 3px solid #CEFFEA;
+    background-color: #dac7ca25;
+}
+.pesanan {
+    background-color: white;
+    width: auto;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    border-radius: 20px;
+    padding: 15px 20px 15px 20px;
+}
+.pesanan h2 {
+    font-family: 'Varela Round', sans-serif;
+}
+.pesanan h2, .pesanan h3{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.att-produk, .att-pesanan {
+    font-size: 20px;
+    float : left;
+}
+
+.to-right {
+    text-align: right;
+}
+.button-collection button{
+    width: 30px;
+    height: 30px;
+    border: 0px;
+    background-color: white;
+}
+.cancel-button {
+    background-image: url(../img/Cross.svg);
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.check-button {
+    background-image: url(../img/Vector.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px 25px;
+}
+
+/*--------------------------BAGIAN KANAN-----------------------*/
+
+.second-section {
+    margin-left: 40%;
+    width: 60%;
+}
+/****************************Bar Navigasi**********************/
+.nav-bar {
+    width: 100%;
+    height: 58px;
+    border-radius: 20px;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.nav-content {
+    height: 58px;
+    float: left;
+}
+.logo {
+    margin :2px;
+    background-image: url(../img/Logo.svg);
+    width: 60px;
+    background-size: 45px 54px;
+    background-repeat: no-repeat;
+    border-right: 2px solid black;
+}
+
+.profile-pic {
+    width: 45px;
+    height: 45px;
+    margin: 8px 15px;
+    background-image: url(../img/UserHomepage.svg);
+    background-size: cover;
+    border-radius: 23px;
+    float: left;
+}
+
+.profile-name {
+    margin-top: 9px;
+    font-size: 27px;
+    font-weight: 600;
+    float: left;
+    color: black;
+}
+
+.profile-name:hover, .profile-settings a div:hover{
+    color: violet;
+}
+
+.profile-name:active, .profile-settings a div:active{
+    color: white;
+}
+
+.profile-settings {
+    margin-top: 0px;
+    float: right;
+}
+
+.profile-settings a div{
+    margin: 10px;
+    font-size: 27px;
+    font-weight: 700;
+    color: black;
+    text-align: right;
+    text-decoration: none;
+    float: right;
+}
+
+/******************CONTENT BARANG DIJUAL*****************/
+
+.main-content {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.slot-barang, .tambah-jualan{
+    margin: 20px;
+    width: 202px;
+    height: 315px;
+    background-color: white;
+    border-radius: 20px;
+    float: left;
+}
+.foto-barang {
+    width: 100%;
+    height: 70%;
+    background-image: url(../img/image\ 1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+}
+.data-barang {
+    margin: 10px;
+    height: 70px;
+}
+.data-barang img{
+    margin: 15px 15px 5px 10px;
+    width: 33px;
+    height: 37px;
+    float: left;
+}
+.nama-barang{
+    width: 67%;
+    height: 50px;
+    margin-top: 24px;
+    font-size: 19px;
+    overflow: hidden;
+    float: left;
+}
+.logo-tambah {
+    width: 100%;
+    height: 70%;
+    background-image: url(../img/Tambah.png);
+    background-repeat: no-repeat;
+    background-size: 64px;
+    background-position: center;
+    border-radius: 20px;
+}
+.teks-tambah {
+    width: 100%;
+    height: 50px;
+    margin-top: 30px;
+    font-size: 19px;
+    text-align: center;
+}
+.clear {
+    clear: left;
+}
+
+/*************POP-UP KONFIRMASI***********/
+
+.pop-up {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 1000px;
+    background-color: rgba(87, 87, 87, 0.541);
+    display: none;
+}
+.confirm {
+    margin: auto;
+    margin-top: 20%;
+    height: 15%;
+    width: 30%;
+    padding: 10px;
+    padding-top: 40px;
+    border-radius: 30px;
+    border: 15px solid #CEFFEA;
+}
+.confirm span{
+    font-family: 'Varela Round', sans-serif;
+    font-size: 30px;
+    margin-left: 23%;
+}
+.confirm-buttons button{
+    width: 30px;
+    height: 30px;
+    border: 0px;
+    margin-top: 80px;
+    background-color: transparent;
+}
+.yes-button {
+    background-image: url(../img/Cross.svg);
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.no-button {
+    background-image: url(../img/Vector.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px 25px;
+}
