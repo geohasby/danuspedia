@@ -72,10 +72,9 @@
                 @foreach ($product as $p)
                     <a href="#">
                         <div class="slot-barang">
-                            <div class="foto-barang"></div>
+                            <img class="foto-barang" src="{{ asset('img/product/' . $p->image) }}" alt="">
                             <div class="data-barang">
-                                <img src="{{ asset('img/product/' . $p->image) }}" alt="">
-                                <div class="nama-barang">{{ $p->name }}</div>
+                                <div class="nama-barang" >{{ $p->name }}</div>
                             </div>
                         </div>
                     </a>
