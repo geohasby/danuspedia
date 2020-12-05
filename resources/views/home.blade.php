@@ -114,12 +114,8 @@
 
       <div class="photo-container">
         <div class="overlayContainer">
-<<<<<<< HEAD
-          <a>
-=======
-          <a> <!--href="{{ route('product.show',$p->id) }}"  ini link nya barangkali butuh-->
->>>>>>> parent of a4fa678... sabar
-            <img id="barang" src="{{ asset('img/product/' . $p->image) }}" class="fotoBarang">
+          <a href="{{ route('product.show',$p->id) }}" >
+            <img src="{{ asset('img/product/' . $p->image) }}" class="fotoBarang">
           </a>
           <div class="overlay">
             <div class="beliBarangIni">Beli barang ini</div>
@@ -298,39 +294,6 @@
     function fading(){
       document.getElementById(kelas).classList.toggle("gone");
     }
-    //////////////////////////////////////////////////////////////////////
-    ///////////////////////////INI BUAT POPUP/////////////////////////////
-    let kurang = document.getElementById('kurang');
-    let tambah = document.getElementById('tambah');
-    let dibeli = document.getElementById('kuantitas-beli');
-    let stok = document.getElementById('stok-barang').innerHTML;
-    let keluar = document.getElementById('exit');
-    let popup = document.getElementById('popup');
-    let benda = document.getElementById('barang')
-    if(dibeli.innerHTML == stok) tambah.disabled = true;
-
-    kurang.addEventListener('click', function() {
-      dibeli.innerHTML -= 1;
-      if(dibeli.innerHTML == 1) kurang.disabled = true;
-      if(dibeli.innerHTML < stok) tambah.disabled = false;
-    });
-
-    tambah.addEventListener('click', function() {
-      kurang.disabled = false;
-      dibeli.innerHTML = parseInt(dibeli.innerHTML) + 1;
-      if(dibeli.innerHTML >= stok) tambah.disabled = true;
-    });
-
-    keluar.addEventListener('click', function() {
-      popup.style.display = 'none';
-    });
-
-    benda.addEventListener('click', function() {
-      popup.style.display = 'block';
-    });
-
-    //////////////////////////INI BUAT POPUP////////////////////////////
-    ////////////////////////////////////////////////////////////////////
   </script>
 </body>
 </html>
