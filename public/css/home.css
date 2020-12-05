@@ -380,8 +380,7 @@ Window
 	transition: 3s;
 	opacity: 0%;
 }
-#successBuy,
-#failBuy .p{
+#hasilOrder{
 	vertical-align: middle;
 	display: inline-block;
 	font-family:'Kodchasan', sans-serif;
