@@ -114,7 +114,7 @@
 
       <div class="photo-container">
         <div class="overlayContainer">
-          <a> <!--href="{{ route('product.show',$p->id) }}"  ini link nya barangkali butuh-->
+          <a>
             <img id="barang" src="{{ asset('img/product/' . $p->image) }}" class="fotoBarang">
           </a>
           <div class="overlay">
