@@ -14,7 +14,8 @@ body {
   background: #CEFFEA;
   font-family: 'Open Sans Condensed', sans-serif;
   color: black;
-  background-image: url(../img/Background.svg);
+  background-image: url(../img/RegisterBG.svg);
+  background-attachment: fixed;
   background-size: cover;      
   /* background-attachment: fixed; */
 }
