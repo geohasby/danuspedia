@@ -270,6 +270,35 @@ body {
     clear: left;
 }
 
+#confirmOrder,
+#cancelOrder{
+	background-color: lightgreen;
+    position: fixed;
+    width: 25%;
+    height: 16%;
+    top: 20%;
+    z-index: 1;
+    left: 39%;
+	text-align: center;
+	border-radius: 20px;
+	pointer-events: none;
+}
+#cancelOrder{
+	background-color: rgb(255, 96, 96);
+}
+
+.gone{
+	transition: 3s;
+	opacity: 0%;
+}
+#hasilOrder{
+	vertical-align: middle;
+	display: inline-block;
+	font-family:'Kodchasan', sans-serif;
+    line-height: 3;
+    font-size: 22px;
+}
+
 /*************POP-UP KONFIRMASI***********/
 
 .pop-up {
@@ -304,14 +333,14 @@ body {
     background-color: transparent;
 }
 .yes-button {
-    background-image: url(../img/Cross.svg);
+    background-image: url(../img/Vector.svg);
     background-size: 25px;
     background-repeat: no-repeat;
     background-position: center;
     
 }
 .no-button {
-    background-image: url(../img/Vector.svg);
+    background-image: url(../img/Cross.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 30px 25px;

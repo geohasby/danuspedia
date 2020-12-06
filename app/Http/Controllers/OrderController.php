@@ -60,8 +60,16 @@ class OrderController extends Controller
         }
     }
 
-    public function konfirmasi_penjual(Request $request){
-        Order::find($request->id)->update(['status' => 'menunggu dikirim']);
+    public function konfirmasi_penjual($id){
+        Order::find($id)->update(['status' => 'menunggu dikirim']);
+        return redirect()->route('seller.home')
+                        ->with('success', 'Order telah dikonfirmasi');
+    }
+
+    public function batal($id){
+        Order::find($id)->update(['status' => 'dibatalkan']);
+        return redirect()->route('seller.home')
+                        ->with('error', 'Order telah dibatalkan');
     }
 
     public function order_diterima(Request $request){
@@ -112,7 +120,7 @@ class OrderController extends Controller
     {
         Order::find($id)->delete();
 
-        return redirect()->route('home')
+        return redirect()->route('seller/home')
                         ->with('success', 'Order deleted successfully');
     }
 }

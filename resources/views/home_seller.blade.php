@@ -15,6 +15,16 @@
                 <button id="reset"></button>
                 <button id="search"></button>
             </div>
+
+            @if ($message = Session::get('success'))
+                <div id="confirmOrder">
+                    <p id="hasilOrder">{{ $message }}</p>
+                </div>
+            @elseif ($message = Session::get('error'))
+                <div id="cancelOrder" >
+                <p id="hasilOrder">{{ $message }}</p>
+                </div>
+            @endif
             
             <div class="list-pesanan">
                 @foreach ($order as $o)
@@ -34,9 +44,20 @@
                         <div class="tempat-cod">
                             <h3>Tempat COD : {{ $o->place_taken }}</h3>
                         </div>
+                        <div>
+                            <h3>Status : {{ $o->status }}</h3>
+                        </div>
                         <div class="button-collection to-right">
-                            <button class="cancel-button cancel-order"></button>
-                            <button class="check-button complete-order"></button>
+                            <form method="POST" action="{{ route('confirm_order', $o->id) }}">
+                                @csrf
+                                @method('PUT')
+                                <button type="submit" class="check-button complete-order"></button>
+                            </form>
+                            <form method="POST" action="{{ route('cancel', $o->id) }}">
+                                @csrf
+                                @method('PUT')
+                                <button type="submit" class="cancel-button cancel-order"></button>
+                            </form>
                         </div>
                     </div>
                 @endforeach
@@ -85,24 +106,16 @@
             </div>
         </div>
     </div>
+    <!-- SORRY, SUSAH MAKE POPUP
     <div id="pop-up" class="pop-up">
         <div class="confirm bg-main">
             <span>Apakah Anda Yakin?</span>
             <div class="confirm-buttons to-right">
-                <form id="yes" method="POST" action="">
-                    @csrf
-                    <input type="hidden" value="">
-                    <button type="submit" class="yes-button"></button>
-                </form>
-                <form id="no" method="POST" action="">
-                    @csrf
-                    @method('DELETE')
-                    <input type="hidden" value="">
-                    <button type="submit" class="no-button"></button>
-                </form>
+                <button id="yes" type="submit" class="yes-button"></button>
+                <button id="no" type="submit" class="no-button"></button>
             </div>
         </div>
-    </div>
+    </div> -->
     <script src="{{ asset('js/scriptHPpenjual.js') }}"></script>
 </body>
 </html>
