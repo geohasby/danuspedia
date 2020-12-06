@@ -80,7 +80,7 @@
         <div class="barang">
           <div class="first-section">
             <div id="foto-barang-full" class="foto-barang-full">
-              <img src="{{ asset('img/product/' . $product->image) }}" alt="">
+              <img src="{{ asset('img/product/' . $product->image) }}" alt="" class="fotoBarang">
             </div>
             <a id="profile-penjual" href="#">
               <div class="mini-profile-penjual">
@@ -118,9 +118,9 @@
                 <div class="spesifikasi-pemesanan">
                   <div class="kuantitas">
                     <span>Jumlah Dibeli</span>
-                    <button disabled id="kurang"></button>
-                    <input id="kuantitas-beli" class="kuantitas-final" name="quantity" value="0">
-                    <button id="tambah"></button>
+                    <button disabled id="kurang" class="kuantitasChanger"></button>
+                    <input id="kuantitas-beli" class="kuantitas-final kuantitasChanger" name="quantity" value="0">
+                    <button id="tambah" class="kuantitasChanger"></button>
                   </div>
                   <div class="lokasi">
                     <label for="place_taken">Lokasi Pengambilan :</label>
@@ -257,6 +257,23 @@
       total.innerHTML = parseInt(dibeli.value)*parseInt(harga);
       if(parseInt(dibeli.value) >= parseInt(stok)) tambah.disabled = true;
     });
+
+    var normalTimer = setInterval(cekOverlap, 100);
+    var normalWindow = true;
+
+    function cekOverlap(){
+      var segitigaOrganisasi = document.getElementById("segitigaOrganisasi");
+      var rect = segitigaOrganisasi.getBoundingClientRect();
+      var y=rect.left;
+      if(y<648 && normalWindow){
+        document.getElementById("kotakSearch").classList.toggle("kecilinSearch");
+        normalWindow = false;
+      }
+      else if(y>648 && !normalWindow){
+        document.getElementById("kotakSearch").classList.toggle("kecilinSearch");
+        normalWindow = true;
+      }
+    }
 
     // //////////tombol beli////////////
     // beli.addEventListener('click', function() {

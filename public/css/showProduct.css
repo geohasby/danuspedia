@@ -77,7 +77,7 @@ body {
 	border: none;
 	margin-right: -10px;
 	margin-top: -10px;
-	font-size: 45px;
+	font-size: 41px;
 	outline: none;
 	cursor: pointer;
 	}
@@ -133,6 +133,11 @@ body {
     padding: 7px;
     display: flex;
     border-radius: 30px;
+}
+
+.kecilinSearch{	
+	left: 70%;
+	width: 43%;
 }
 
 .wrapper .input {
@@ -250,8 +255,8 @@ body {
   }
   .barang {
     width: 85%;
-    height: 700px;
-    margin: 6% 7% 0 7%;
+    height: 100%;
+    margin: 105px 7% 0 7%;
     border-radius: 20px;
     padding: 20px;
     background-color: #F6E8EA;
@@ -264,14 +269,16 @@ body {
     float: left;
   }
   .foto-barang-full {
-    width: 99%;
-    height: 500px;
+    width: auto;
+    height: auto;
     border: 5px solid pink;
-    border-radius: 10px 10px 10px 10px;
-    background-color: rgba(142, 255, 221, 0.432);
-    background-size: 500px;
-    background-position: center;
-    background-repeat: no-repeat;
+    border-radius: 10px;
+  }
+
+  .fotoBarang{
+    width: 100%;
+    margin-bottom: -5px;
+    border-radius: inherit;
   }
   .mini-profile-penjual{
     width: 100%;
@@ -404,6 +411,10 @@ body {
     font-family: 'Ubuntu', sans-serif;
     border-bottom: 2px solid black;
     float: left;
+  }
+
+  .kuantitasChanger{
+    height: 1000px;
   }
   .lokasi, .waktu{
     padding: 1% 0px 0px 1%;

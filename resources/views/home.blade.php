@@ -208,11 +208,11 @@
       var segitigaOrganisasi = document.getElementById("segitigaOrganisasi");
       var rect = segitigaOrganisasi.getBoundingClientRect();
       var y=rect.left;
-      if(y<450 && normalWindow){
+      if(y<460 && normalWindow){
         document.getElementById("kotakSearch").classList.toggle("kecilinSearch");
         normalWindow = false;
       }
-      else if(y>450 && !normalWindow){
+      else if(y>460 && !normalWindow){
         document.getElementById("kotakSearch").classList.toggle("kecilinSearch");
         normalWindow = true;
       }
