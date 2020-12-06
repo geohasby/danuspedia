@@ -118,9 +118,9 @@
                 <div class="spesifikasi-pemesanan">
                   <div class="kuantitas">
                     <span>Jumlah Dibeli</span>
-                    <button disabled id="kurang" class="kuantitasChanger"></button>
-                    <input id="kuantitas-beli" class="kuantitas-final kuantitasChanger" name="quantity" value="0">
-                    <button id="tambah" class="kuantitasChanger"></button>
+                    <button disabled id="kurang" class="kuantitas"></button>
+                    <input id="kuantitas-beli" class="kuantitas-final" name="quantity" value="0">
+                    <button id="tambah"></button>
                   </div>
                   <div class="lokasi">
                     <label for="place_taken">Lokasi Pengambilan :</label>

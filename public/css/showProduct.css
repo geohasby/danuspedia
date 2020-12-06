@@ -412,10 +412,7 @@ body {
     border-bottom: 2px solid black;
     float: left;
   }
-
-  .kuantitasChanger{
-    height: 1000px;
-  }
+  
   .lokasi, .waktu{
     padding: 1% 0px 0px 1%;
     height: auto;
