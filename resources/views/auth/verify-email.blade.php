@@ -1,3 +1,4 @@
+<link rel="shortcut icon" href="{{ asset('img/iconWeb.svg' )}}" type="image/x-icon">
 <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100" 
         style="background-image: url(../img/verifBackground.svg);	
         background-attachment: fixed; 
