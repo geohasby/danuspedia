@@ -1,4 +1,7 @@
-
+<div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100" 
+        style="background-image: url(../img/verifBackground.svg);	
+        background-attachment: fixed; 
+        background-size: cover;">
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
@@ -37,5 +40,5 @@
             </form>
         </div>
     </x-auth-card>
- 
-</x-guest-layout>
+ </x-guest-layout>
+ </div>
