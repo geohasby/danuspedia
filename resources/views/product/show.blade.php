@@ -12,64 +12,63 @@
 </head>
 <body>
     <div class="header-container">
-        <div class="title-bar">
-          <div class="title-bar-left">
-            <a href="{{ route('home') }}">
-              <img id="Logo" src="{{ asset('img/Logo.svg') }}">
-            </a>
-          </div>
-          <div class = "title-bar-middle">
-            <div id="LineLeft"></div>
-            <div class = "Menu-bar">
-              <div class="dropdown">
-                <button onclick="KategoriDrop()" class="dropbtn" >Kategori <img class="segitiga" src="{{ asset('img/SegitigaHomepage.svg') }}"></button>
-                <div id="kategoriDropdown" class="dropdown-content">
-                  <a href="{{ url('category/makanan') }}">Makanan</a>
-                  <a href="{{ url('category/minuman') }}">Minuman</a>
-                  <a href="{{ url('category/lain-lain') }}">Others</a>
-                </div>
-              </div>
-              <div class="dropdown"style="margin-left: 30px;">
-                <button onclick="HimaDrop()" class="dropbtn" >Himpunan <img class="segitiga" src="{{ asset('img/SegitigaHomepage.svg') }}"></button>
-                <div id="himpunanDropdown" class="dropdown-content">
-                  <a href="{{ url('organisasi/HIMAKOM') }}">HIMAKOM</a>
-                  <a href="{{ url('organisasi/HMEI') }}">HMEI</a>
-                  <a href="{{ url('organisasi/HIMATIKA') }}">HIMATIKA</a>
-                  <a href="{{ url('organisasi/HIMASTA') }}">HIMASTA</a>
-                  <a href="{{ url('organisasi/HIMARIA') }}">HIMARIA</a>
-                  <a href="{{ url('organisasi/HIMAFI') }}">HIMAFI</a>
-                  <a href="{{ url('organisasi/HMGF') }}">HMGF</a>
-                  <a href="{{ url('organisasi/KMK') }}">KMK</a>
-                </div>
-              </div>
-              <div class="dropdown"style="margin-left: 30px;">
-                <button onclick="OrganisasiDrop()" class="dropbtn">Organisasi <img class="segitiga" id="segitigaOrganisasi" src="{{ asset('img/SegitigaHomepage.svg') }}"></button>
-                <div id="organisasiDropdown" class="dropdown-content">
-                  <a href="">ORKOM</a>
-                  <a href="">OTI</a>
-                </div>
+      <div class="title-bar">
+        <div class="title-bar-left">
+          <a href="{{ route('home') }}">
+            <img id="Logo" src="{{ asset('img/Logo.svg') }}">
+          </a>
+        </div>
+        <div class = "title-bar-middle">
+          <div id="LineLeft"></div>
+          <div class = "Menu-bar">
+            <div class="dropdown">
+              <button onclick="KategoriDrop()" class="dropbtn" >Kategori <img class="segitiga" src="{{ asset('img/SegitigaHomepage.svg') }}"></button>
+              <div id="kategoriDropdown" class="dropdown-content">
+                <a href="{{ url('category/makanan') }}">Makanan</a>
+                <a href="{{ url('category/minuman') }}">Minuman</a>
+                <a href="{{ url('category/lain-lain') }}">Others</a>
               </div>
             </div>
-              <form class="wrapper" id="kotakSearch" method="GET" action="{{ url('search') }}">
-                <input type="text" name="keyword" class="input" id="searchThis" placeholder="What are you looking for?">
-                <button type="submit" class="searchbtn" onclick="searchSomething()">
-                  <img class="fas" src="{{ asset('img/SearchHomepage.svg') }}">
-                </button>
-              </form>
-          </div>
-          <div class="title-bar-right">
-            <div id="LineRight"></div>
-            <div class="dropdownProfile">
-              <button class="dropbtnProfile"><img src="{{ asset('img/UserHomepage.svg') }}" class="UserLogo">
-                <img class="segitigaRight" src="{{ asset('img/SegitigaHomepage.svg') }}">
-              </button>
-              <div id="profileDropdown" class="dropdownProfile-content">
-                <a href="#">Profile</a>
-                <form method="POST" action="{{ route('logout') }}">
-                  @csrf
-                  <a type="submit" href="route('logout')" onclick="event.preventDefault();this.closest('form').submit();">Logout</a>
-                </form>
+            <div class="dropdown"style="margin-left: 30px;">
+              <button onclick="HimaDrop()" class="dropbtn" >Himpunan <img class="segitiga" src="{{ asset('img/SegitigaHomepage.svg') }}"></button>
+              <div id="himpunanDropdown" class="dropdown-content">
+                <a href="{{ url('organisasi/HIMAKOM') }}">HIMAKOM</a>
+                <a href="{{ url('organisasi/HMEI') }}">HMEI</a>
+                <a href="{{ url('organisasi/HIMATIKA') }}">HIMATIKA</a>
+                <a href="{{ url('organisasi/HIMASTA') }}">HIMASTA</a>
+                <a href="{{ url('organisasi/HIMARIA') }}">HIMARIA</a>
+                <a href="{{ url('organisasi/HIMAFI') }}">HIMAFI</a>
+                <a href="{{ url('organisasi/HMGF') }}">HMGF</a>
+                <a href="{{ url('organisasi/KMK') }}">KMK</a>
               </div>
+            </div>
+            <div class="dropdown"style="margin-left: 30px;">
+              <button onclick="OrganisasiDrop()" class="dropbtn">Organisasi <img class="segitiga" id="segitigaOrganisasi" src="{{ asset('img/SegitigaHomepage.svg') }}"></button>
+              <div id="organisasiDropdown" class="dropdown-content">
+                <a href="">ORKOM</a>
+                <a href="">OTI</a>
+              </div>
+            </div>
+          </div>
+            <form class="wrapper" id="kotakSearch" method="GET" action="{{ url('search') }}">
+              <input type="text" name="keyword" class="input" id="searchThis" placeholder="What are you looking for?">
+              <button type="submit" class="searchbtn" onclick="searchSomething()">
+                <img class="fas" src="{{ asset('img/SearchHomepage.svg') }}">
+              </button>
+            </form>
+        </div>
+        <div class="title-bar-right">
+          <div id="LineRight"></div>
+          <div class="dropdownProfile">
+            <button class="dropbtnProfile"><img src="{{ asset('img/UserHomepage.svg') }}" class="UserLogo">
+              <img class="segitigaRight" src="{{ asset('img/SegitigaHomepage.svg') }}">
+            </button>
+            <div id="profileDropdown" class="dropdownProfile-content">
+              <a href="#">Profile</a>
+              <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <a type="submit" href="route('logout')" onclick="event.preventDefault();this.closest('form').submit();">Logout</a>
+              </form>
             </div>
           </div>
         </div>
@@ -80,54 +79,66 @@
       <div id="deskripsi-produk" class="barang-container">
         <div class="barang">
           <div class="first-section">
-            <div id="foto-barang-full" class="foto-barang-full"></div>
+            <div id="foto-barang-full" class="foto-barang-full">
+              <img src="{{ asset('img/product/' . $product->image) }}" alt="">
+            </div>
             <a id="profile-penjual" href="#">
               <div class="mini-profile-penjual">
                 <div id="foto-penjual" class="foto-penjual"></div>
-                <span id="nama-penjual">Nama_Organisasi</span>
+                <span id="nama-penjual">{{ $seller->name }}</span>
               </div>
             </a>
           </div> 
           <div class="second-section">
             <div class="profil-barang">
-              <div id="nama-barang" class="nama-barang">Kapak Kingmaker Kecil</div>
-              <div class="stok-barang">Stok : <b id="stok-barang">5</b> <b id="critic-state" class="critic-state"> - Stok Ingin Habis!</b></div>
+              <div id="nama-barang" class="nama-barang">{{ $product->name }}</div>
+              <div class="stok-barang">Stok : <b id="stok-barang">{{ $product->stock }}</b> <b id="critic-state" class="critic-state"> - Stok Ingin Habis!</b></div>
               <div class="harga-barang">
                 <div class="label">Harga</div>
                 <div class="nominal"> Rp. 
-                  <b id="harga-barang">2500</b>
+                  <b id="harga-barang">{{ $product->price }}</b>
                 </div>
               </div>
               <div class="deskripsi-produk">
                 <div class="label">Deskripsi</div>
                 <div id="deskripsi-barang" class="deskripsi">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet cumque facilis praesentium, quod cupiditate itaque veniam modi expedita perferendis non. Ex officia impedit aliquid dolore provident est vero error mollitia obcaecati distinctio inventore illo placeat, eum sapiente. Totam voluptates sequi odit sapiente sint neque dolor nulla nihil! Eos excepturi quibusdam vel cum laboriosam? Non repellat ea illo ab recusandae, perferendis eum a nihil earum, harum, est doloremque explicabo omnis asperiores pariatur officiis soluta quas velit cupiditate vel similique? In quam, incidunt, atque ducimus praesentium, ipsam eligendi dolor eius fuga est voluptatibus optio! Minima vel amet placeat eius vitae, odit quisquam laborum blanditiis nobis. Repellendus assumenda, atque accusamus iste adipisci cum laudantium esse excepturi nesciunt asperiores labore sit repellat fuga corrupti officia temporibus amet placeat harum et. Error quos soluta accusantium tenetur laborum natus debitis unde enim tempore ipsum voluptates expedita rem, excepturi blanditiis dolore, voluptatum ipsam maxime tempora inventore suscipit ducimus illo. Illum, saepe nesciunt. Culpa placeat delectus quisquam deserunt inventore odit eum possimus, tempora exercitationem animi eaque temporibus, architecto veritatis mollitia fugit nisi quos neque? Rem veritatis ratione dolores laboriosam odio reiciendis harum, ab repellat labore numquam voluptas cum quisquam distinctio possimus. Eius, laboriosam repellat aspernatur temporibus quasi asperiores!
+                  {{ $product->description }}
                 </div>
               </div>
             </div>
-            <form action onsubmit="">
+            
+            <!-- Validation Errors -->
+            <x-auth-validation-errors class="mb-4" :errors="$errors" style="color:red;margin-left:20px;margin-top:30px;" />
+
+            <form method="POST" action="{{ route('order.store') }}">
+              @csrf
+              <input type="hidden" name="product_id" value="{{$product->id}}">
+              <input type="hidden" name="customer_id" value="{{$user->id}}">
               <div class="box-pesanan">
                 <div class="spesifikasi-pemesanan">
                   <div class="kuantitas">
                     <span>Jumlah Dibeli</span>
                     <button disabled id="kurang"></button>
-                    <div id="kuantitas-beli" class="kuantitas-final">0</div>
+                    <input id="kuantitas-beli" class="kuantitas-final" name="quantity" value="0">
                     <button id="tambah"></button>
                   </div>
                   <div class="lokasi">
-                    <label for="lokasi">Lokasi Pengambilan :</label>
-                    <select required name="Lokasi" id="lokasi">
+                    <label for="place_taken">Lokasi Pengambilan :</label>
+                    <select required name="place_taken" id="lokasi">
                       <option disabled selected value="null">Pilih Lokasi Pengambilan Barang</option>
-                      <option value="selasar-c">Selasar Gedung C</option>
-                      <option value="sekrehima">Sekre Hima</option>
+                      <option value="Selasar Gedung C">Selasar Gedung C</option>
+                      <option value="Sekre Hima">Sekre Hima</option>
+                      <option value="Lantai 1 Gedung C">Lantai 1 Gedung C</option>
+                      <option value="Lantai 2 Gedung C">Lantai 2 Gedung C</option>
+                      <option value="Lantai 3 Gedung C">Lantai 3 Gedung C</option>
                     </select>
                   </div>
                   <div class="waktu">
                     <label for="waktu">Waktu Pengambilan</label>
-                    <input required type="datetime-local" id="waktu">
+                    <input required name="time_taken" type="datetime-local" id="waktu">
                   </div>
-                  <button type="button" id="checkout">Beli Sekarang! - Rp. <b id="total-harga">0</b></button>
-                  <div id="popup" class="popup-container">
+                  <button type="submit" id="checkout">Beli Sekarang! - Rp. <b id="total-harga">0</b></button>
+                  <!-- <div id="popup" class="popup-container">
                     <div class="popup">
                       <div class="teks-konfirmasi">Apakah Anda Yakin?</div>
                       <div class="tombol-konfirmasi">
@@ -137,7 +148,7 @@
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </form>
@@ -224,8 +235,8 @@
     let waktu = document.getElementById('waktu');
     
 
-    total.innerHTML = parseInt(dibeli.innerHTML)*parseInt(harga); //total harga
-    if(dibeli.innerHTML == stok) tambah.disabled = true;          //cek stok
+    total.innerHTML = parseInt(dibeli.value)*parseInt(harga); //total harga
+    if(dibeli.value == stok) tambah.disabled = true;          //cek stok
     if(stok < 5) document.getElementById('critic-state').style.display = 'inline'; //warning klo stok mau abis
     if(stok == 0) {
       document.getElementById('critic-state').innerHTML = " - Stok Habis!";
@@ -233,49 +244,49 @@
     }
     //////////tombol kurang////////////
     kurang.addEventListener('click', function() {
-      dibeli.innerHTML -= 1;
-      total.innerHTML = parseInt(dibeli.innerHTML)*parseInt(harga);
-      if(parseInt(dibeli.innerHTML) == 0) kurang.disabled = true;
-      if(parseInt(dibeli.innerHTML) < parseInt(stok)) tambah.disabled = false;
+      dibeli.value -= 1;
+      total.innerHTML = parseInt(dibeli.value)*parseInt(harga);
+      if(parseInt(dibeli.value) == 0) kurang.disabled = true;
+      if(parseInt(dibeli.value) < parseInt(stok)) tambah.disabled = false;
     });
 
     ///////////tombol tambah////////////
     tambah.addEventListener('click', function() {
       kurang.disabled = false;
-      dibeli.innerHTML = parseInt(dibeli.innerHTML) + 1;
-      total.innerHTML = parseInt(dibeli.innerHTML)*parseInt(harga);
-      if(parseInt(dibeli.innerHTML) >= parseInt(stok)) tambah.disabled = true;
+      dibeli.value = parseInt(dibeli.value) + 1;
+      total.innerHTML = parseInt(dibeli.value)*parseInt(harga);
+      if(parseInt(dibeli.value) >= parseInt(stok)) tambah.disabled = true;
     });
 
-    //////////tombol beli////////////
-    beli.addEventListener('click', function() {
-      let popup = document.getElementById('popup');
-      let yakin = document.getElementById('yakin');
-      let notyakin = document.getElementById('tidak-yakin');
+    // //////////tombol beli////////////
+    // beli.addEventListener('click', function() {
+    //   let popup = document.getElementById('popup');
+    //   let yakin = document.getElementById('yakin');
+    //   let notyakin = document.getElementById('tidak-yakin');
 
-      //////////cek klo ada yg kosong inputannya/////////
-      if(dibeli.innerHTML == 0 || lokasi.value == null || waktu.value == ""){
-        alert("Lengkapi Isiannya Dahulu");
-        return false;
-      }
-      else{
-        popup.style.display = 'block';
-        //////////kalo confirm///////////////
-        yakin.addEventListener('click', function() {
-          popup.style.display = 'none';
-          let sukses = document.getElementById('success');
-          sukses.style.display = 'block';
-          setTimeout(function() {
-            sukses.style.display = 'none';
-            return true;
-          }, 2500);
-        });
-        /////////kalo gajadi////////////////
-        notyakin.addEventListener('click', function() {
-          popup.style.display = 'none';
-        });
-      }
-    });
+    //   //////////cek klo ada yg kosong inputannya/////////
+    //   if(dibeli.value == 0 || lokasi.value == null || waktu.value == ""){
+    //     alert("Lengkapi Isiannya Dahulu");
+    //     return false;
+    //   }
+    //   else{
+    //     popup.style.display = 'block';
+    //     //////////kalo confirm///////////////
+    //     yakin.addEventListener('click', function() {
+    //       popup.style.display = 'none';
+    //       let sukses = document.getElementById('success');
+    //       sukses.style.display = 'block';
+    //       setTimeout(function() {
+    //         sukses.style.display = 'none';
+    //         return true;
+    //       }, 2500);
+    //     });
+    //     /////////kalo gajadi////////////////
+    //     notyakin.addEventListener('click', function() {
+    //       popup.style.display = 'none';
+    //     });
+    //   }
+    // });
 
     //////////////////////////INI BUAT POPUP////////////////////////////
     </script>

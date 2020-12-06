@@ -80,7 +80,8 @@ class ProductController extends Controller
     public function show(Request $request, $id)
     {
         $product = Product::find($id);
-        return view('product.show', compact('product'), ['user' => $request->user()]);
+        $seller = User::find($product->seller_id);
+        return view('product.show', compact('product', 'seller'), ['user' => $request->user()]);
     }
 
     /**
