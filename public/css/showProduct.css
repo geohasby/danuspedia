@@ -1,0 +1,533 @@
+::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+	background-color: rgb(255, 212, 219);
+	border-radius: 5px 5px 5px 5px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+	background-color: #ffb7c2; 
+	border-radius: 5px 5px 5px 5px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #f38797;
+  }
+
+body {
+	font-family: Arial, sans-serif;
+	background-image: url(../img/backgroundHomepage.svg);
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+.header-container .title-bar {
+	display: inline-block;
+    position: fixed;
+    left: 0;
+    top: -20px;
+    width: 100%;
+    height: 90px;
+    padding-top: 10px;
+    padding-left: 5%;
+    padding-right: 40%;
+    background-color: #F6E8EA;
+    margin-top: 20px;
+    margin-left: -22%;
+    margin-right: 8%;
+    transform: scale(0.6);
+    font-size: 30px;
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 2px;
+    z-index: 2;
+}
+.title-bar .title-bar-left{
+	float: left;
+	margin-left: -50px;
+}
+#Logo{
+	cursor: pointer;
+}
+.title-bar-middle{
+	margin-top: 7px;
+	margin-left: 60px;
+}
+
+#LineLeft{
+	position: absolute;
+	margin-left: -20px;
+	float: left;
+    width: 2px;
+    height: 70%;
+    background-color: black;
+}
+
+/* Dropdown Button */
+.dropbtn {
+	background-color: inherit;
+	color: black;
+	padding: 16px;
+	border: none;
+	margin-right: -10px;
+	margin-top: -10px;
+	font-size: 45px;
+	outline: none;
+	cursor: pointer;
+	}
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+	position: relative;
+	display: inline-block;
+  }
+
+  .segitiga{
+	  position: relative;
+	  margin-bottom: 7px;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+	display: none;
+	font-size: 45px;
+	position: absolute;
+	background-color: #f1f1f1;
+	min-width: 130px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+	font-family:'Kodchasan', sans-serif;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd;}
+
+  .show {display:block;}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {background-color: #FFD2D9;
+}
+
+.wrapper{
+	position: absolute;
+    top: 50%;
+    left: 64%;
+    transform: translate(-50%, -50%);
+    background: white;
+    max-width: 100%;
+    width: 55%;
+    padding: 7px;
+    display: flex;
+    border-radius: 30px;
+}
+
+.wrapper .input {
+    width: 85%;
+    padding: 15px 20px;
+    border: none;
+	border-radius: 5px;
+	font-family:'Kodchasan', sans-serif;
+    font-size: 21px;
+	font-weight: bold;
+	outline: none;
+}
+
+.searchbtn {
+    background: #e4e4e1;
+    width: 10%;
+    position: relative;
+	cursor: pointer;
+	border: none;
+	border-radius: 30px ;
+	outline: none;
+	margin-left: 10px;
+ }
+
+ .searchbtn:hover{
+	background-color: rgb(216, 216, 216);
+}
+
+.searchbtn .fas{
+	/* src: url('img/Search.svg'); */
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.title-bar-right {
+	margin-top: -55px;
+	margin-right: -38%;
+	float: right;
+}
+
+
+#LineRight{
+	position: absolute;
+    margin-top: -18px;
+    margin-left: -15px;
+    width: 2px;
+    height: 70%;
+	background-color: black;
+}
+  /* Dropdown Button */
+.dropbtnProfile {
+	background-color: inherit;
+	color: white;
+	padding: 29px 23px 5px 25px;
+	border: none;
+	margin-top: -9px;
+	outline: none;
+	cursor: pointer;
+  }
+  .UserLogo{
+	position: relative;
+    margin-top: -23px;
+    margin-left: -16px;
+    width: 40px;
+ }
+ .segitigaRight{
+    position: absolute;
+    margin-top: -6px;
+    margin-left: 5px;
+    max-width: 15px;
+ } 
+  /* The container <div> - needed to position the dropdown content */
+  .dropdownProfile {
+	position: relative;
+	display: inline-block;
+	
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdownProfile-content {
+	display: none;
+	position: absolute;
+	background-color: #f1f1f1;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdownProfile-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdownProfile-content a:hover {background-color: #ddd;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdownProfile:hover .dropdownProfile-content {display: block;}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdownProfile:hover .dropbtnProfile {background-color: #FFD2D9;}
+
+
+  .barang-container {
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 1;
+  }
+  .barang {
+    width: 85%;
+    height: 700px;
+    margin: 6% 7% 0 7%;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #F6E8EA;
+    overflow: auto;
+  }
+  .first-section {
+    width: 40%;
+    height: 100%;
+    margin-right: 1%;
+    float: left;
+  }
+  .foto-barang-full {
+    width: 99%;
+    height: 500px;
+    border: 5px solid pink;
+    border-radius: 10px 10px 10px 10px;
+    background-color: rgba(142, 255, 221, 0.432);
+    background-image: url(../img/axe_kingmaker_small.jpg);
+    background-size: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .mini-profile-penjual{
+    width: 100%;
+    height: 20px;
+    margin-top: 4%;
+    padding-top: 20px;
+    border-top: 2px solid rgba(255, 192, 203, 0.582);
+  }
+  .foto-penjual{
+    margin: 0px 20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    background-color: blue;
+    background-image: url(../img/UserHomepage.svg);
+    background-size: cover;
+    background-position: center;
+    float: left;
+  }
+  .mini-profile-penjual span{
+    margin-top: 32px;
+    color: black;
+    font-size: 32px;
+    font-family: 'Ubuntu', sans-serif;
+    float: left;
+  }
+  .mini-profile-penjual span:active{
+    color: purple;
+  }
+  .second-section {
+    width: 59%;
+    height: 100%;
+    float: left;
+  }
+  .profil-barang{
+    height: 58%;
+    width: 95%;
+    padding: 20px;
+    font-family: 'Ubuntu', sans-serif;
+  }
+  .nama-barang{
+    font-size: 32px;
+    display: block;
+    font-weight: 600;
+    color: purple;
+    overflow: AUTO;
+  }
+  .stok-barang{
+    margin-top: 3px;
+    font-size: 20px;
+  }
+  .critic-state{
+    color: red;
+    display: none;
+  }
+  .harga-barang{
+    height: 13%;
+    padding-top: 20px;
+    border-top: 2px solid rgba(0, 0, 0, 0.548);
+  }
+  .label{
+    width: 35%;
+    height: 100%;
+    color: rgb(80, 80, 80);
+    font-size: 20px;
+    float: left;
+  }
+  .nominal{
+    font-size: 30px;
+    font-weight: 700;
+    color: red;
+  }
+  .deskripsi-produk{
+    height: 62%;
+    padding-top: 20px;
+    border-top: 2px solid rgba(0, 0, 0, 0.548);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.548);
+  }
+  .deskripsi{
+    height: 100%;
+    font-size: 20px;
+    overflow-y: auto;
+  }
+  .spesifikasi-pemesanan{
+    width: 100%;
+    height: 271px7
+  }
+  .kuantitas{
+    padding: 2% 0px 0px 0px;
+    height: 100px;
+    width: 50%;
+    float: left;
+  }
+  .kuantitas span{
+    margin-top: 5%;
+    margin-left: 2%;
+    margin-right: 5%;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    float: left;
+  }
+  .kuantitas button{
+    height: 60%;
+    width: 60px;
+    border-radius: 30px;
+    border: 3px solid black;
+    background-position: center;
+    background-color: pink;
+    background-size: 35px;
+    background-repeat: no-repeat;
+    float: left;
+  }
+  .kuantitas button:disabled{
+    background-color: gray;
+  }
+  .kuantitas button:active{
+    background-color: rgb(245, 150, 166)
+  }
+  .kuantitas button#tambah{
+    background-image: url(../img/plus.svg);
+  }
+  .kuantitas button#kurang{
+    background-image: url(../img/minus.svg);
+  }
+  .kuantitas-final{
+    height: 60px;
+    width: 100px;
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Ubuntu', sans-serif;
+    border-bottom: 2px solid black;
+    float: left;
+  }
+  .lokasi, .waktu{
+    padding: 1% 0px 0px 1%;
+    height: auto;
+    width: 49%;
+    float: left;
+    font-family:'Kodchasan', sans-serif;
+    font-weight: 600;
+  }
+  .lokasi select, .lokasi select option, .waktu input{
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    border: transparent;
+    font-family:'Kodchasan', sans-serif;
+    font-weight: 600;
+  
+  }
+  .box-pesanan button#checkout{
+    margin-top: 30px;
+    margin-bottom: 50px;
+    width: 100%;
+    height: 60px;
+    border-radius: 7px;
+    border: transparent;
+    background-color: rgb(212, 56, 35);
+    color: white;
+    font-size: 25px;
+    font-family: 'Ubuntu', sans-serif;
+  }
+  .box-pesanan button#checkout:active{
+    background-color: rgb(177, 23, 3);
+  }
+  .box-pesanan button#checkout:disabled{
+    background-color: rgb(83, 83, 83);
+  }
+
+  .popup-container {
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.466);
+    z-index: 3;
+    display: none;
+  }
+  .popup{
+    position: absolute;
+    top: 28%;
+    left: 20%;
+    right: 20%;
+    bottom: 25%;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #fc7777;
+    overflow: auto;
+  }
+  .teks-konfirmasi{
+    width: 100%;
+    margin: auto;
+    margin-top: 10%;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 50px;
+    color: white;
+    text-align: center;
+  }
+  .tombol-konfirmasi {
+    background-color: turquoise;
+    width: auto;
+    margin: 4% 0 0 0;
+  }
+  .tombol {
+    width: 40%;
+    left: 30%;
+    position: relative;
+    background-color: yellow;
+  }
+  .tombol button{
+    width: 70px;
+    height: 70px;
+    margin: 0 12%;
+    border: transparent;
+    background-color: transparent;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .tombol button#tidak-yakin{
+    background-image: url(../img/Crosswhite.svg);
+    float: left;
+  }
+  .tombol button#yakin{
+    background-image: url(../img/Vector.svg);
+    float: right;
+  }
+  .tombol button:active{
+    opacity: 80%;
+  }
+  .success-popup{
+    position: fixed;
+    z-index: 4;
+    width: 18%;
+    height: auto;
+    top: 10px;
+    right: 10px;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: rgb(255, 145, 250);
+    color: white;
+    display: none;
+  }
+  .success-popup:hover{
+    opacity: 90%;
+  }
+  .success-popup span{
+    font-size: 25px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 600;
+    margin: 10px;
+  }
+  .success-popup p{
+    margin: 10px;
+    font-family: 'Ubuntu', sans-serif;
+  }
+

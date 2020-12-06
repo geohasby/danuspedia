@@ -13,7 +13,7 @@
   <div class="header-container">
     <div class="title-bar">
       <div class="title-bar-left">
-        <a href="{{ route('login') }}">
+        <a href="{{ route('home') }}">
           <img id="Logo" src="{{ asset('img/Logo.svg') }}">
         </a>
       </div>

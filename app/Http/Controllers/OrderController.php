@@ -67,7 +67,7 @@ class OrderController extends Controller
     }
 
     public function batal($id){
-        Order::find($id)->update(['status' => 'dibatalkan']);
+        Order::find($id)->update(['status' => 'dibatalkan oleh penjual']);
         return redirect()->route('seller.home')
                         ->with('error', 'Order telah dibatalkan');
     }
