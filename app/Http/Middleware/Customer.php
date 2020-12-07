@@ -18,6 +18,6 @@ class Customer
     {
         if($request->user()->seller == 0)
             return $next($request);
-        else return redirect()->route('seller.home');
+        else return abort('404');
     }
 }

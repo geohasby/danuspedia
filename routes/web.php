@@ -27,6 +27,8 @@ Route::resource('order', OrderController::class);
 
 Route::resource('product', ProductController::class);
 
+Route::get('/home', [ProductController::class, 'index'])->name('home');
+
 Route::middleware('auth', 'verified', 'seller')->group(function () {
     Route::get('seller/home', [SellerController::class, 'index'])->name('seller.home');
     Route::put('confirm_order/{confirm_order}', [OrderController::class, 'konfirmasi_penjual'])->name('confirm_order');
@@ -35,7 +37,6 @@ Route::middleware('auth', 'verified', 'seller')->group(function () {
 });
 
 Route::middleware('auth', 'verified', 'customer')->group(function () {
-    Route::get('/home', [ProductController::class, 'index'])->name('home');
     
     Route::get('{mode}/{keyword?}', [ProductController::class, 'search']); //taruh paling bawah
 });

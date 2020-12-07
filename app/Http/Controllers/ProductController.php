@@ -16,6 +16,9 @@ class ProductController extends Controller
      */
     public function index(Request $request)
     {
+        if($request->user()->seller == '1')
+            return redirect()->route('seller.home');
+
         $product = Product::where('stock', '>', 0)->get();
         $seller = User::all();
         
@@ -99,6 +102,8 @@ class ProductController extends Controller
      */
     public function edit(Request $request, $id)
     {
+        if($request->user()->seller == 0)
+            return abort('404');
         $product = Product::find($id);
         return view('product.edit', compact('product'), ['user' => $request->user()]);
     }
