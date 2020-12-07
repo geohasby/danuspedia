@@ -25,14 +25,14 @@ require __DIR__.'/auth.php';
 Route::middleware('auth', 'verified')->group(function() {
     Route::resource('order', OrderController::class);
     Route::resource('product', ProductController::class);
-    Route::get('/home', [ProductController::class, 'index'])->name('home');
+    Route::get('home', [ProductController::class, 'index'])->name('home');
+    Route::get('history', [OrderController::class, 'history'])->name('history');
 });
 
 Route::middleware('auth', 'verified', 'seller')->group(function () {
     Route::get('seller/home', [SellerController::class, 'index'])->name('seller.home');
     Route::put('confirm_order/{confirm_order}', [OrderController::class, 'konfirmasi_penjual'])->name('confirm_order');
     Route::put('cancel/{cancel}', [OrderController::class, 'cancel'])->name('cancel');
-
 });
 
 Route::middleware('auth', 'verified', 'customer')->group(function () {

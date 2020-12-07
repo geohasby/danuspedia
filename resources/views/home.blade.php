@@ -66,7 +66,7 @@
           <div id="profileDropdown" class="dropdownProfile-content">
           
             <a onClick="comingSoon()" style="cursor: pointer;">Profile</a>
-            <a href="#">History</a>
+            <a href="{{ route('history') }}">History</a>
             <form method="POST" action="{{ route('logout') }}">
               @csrf
               <a type="submit" href="route('logout')" onclick="event.preventDefault();this.closest('form').submit();">Logout</a>

@@ -2,25 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Product;
 use App\Models\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index_order(Request $request, $job)
-    {
-        $order = Order::where($job . '_id', $request->user()->id)->get();
-        //IF ORDER NULL
-        return view('belumtaumaukemana', compact('order'))
-                    ->with('i');
-    }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -63,5 +52,25 @@ class OrderController extends Controller
         $product->update(['stock' => $product->stock + $order->quantity]);
         return redirect()->route('seller.home')
                         ->with('error', 'Order telah dibatalkan');
+    }
+
+    public function history(Request $request)
+    {
+        $user = User::all();
+        $product = Product::all();
+
+        if($request->user()->seller == '0')
+            $order = Order::where('customer_id', $request->user()->id)->get();
+        else $order = DB::table('products')
+                        ->join('orders', 'products.id', '=', 'orders.product_id')
+                        ->where('products.seller_id', $request->user()->id)
+                        ->where('status', '!=', 'Pesanan sedang diproses')
+                        ->orderBy('status', 'ASC')
+                        ->get();
+
+        if($order->first() == null)
+            $order = null;
+
+        return view('history', compact('user', 'product', 'order'), ['this_user' => $request->user()]);
     }
 }

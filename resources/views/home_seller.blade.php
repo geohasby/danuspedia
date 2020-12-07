@@ -90,7 +90,7 @@
                     @csrf
                         <a type="submit" href="route('logout')" onclick="event.preventDefault();this.closest('form').submit();"><div class="logout">Logout</div></a>
                     </form>
-                    <a href="#" style="color: transparent; pointer-events: none;"><div class="edit-profile" style="pointer-events: auto;">Edit Profil</div>kalo ini dihapus, edit profilenya ilang oi</a>
+                    <a href="{{ route('history') }}" style="color: transparent; pointer-events: none;"><div class="edit-profile" style="pointer-events: auto;">History</div>xxxxxxxxxxxxxxx</a>
                 </div>
             </div>
             <div class="main-content bg-main">        
