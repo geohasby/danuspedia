@@ -55,7 +55,7 @@
                     </select>
                 </div>
                 <div class="input stok">
-                    <label for="stok">Jumlah</label>
+                    <label for="stok">Stok</label>
                     <input type="text" name="stock" id="stok" class="inputstok" required>
                 </div>
                 <div class="input harga">

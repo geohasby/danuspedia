@@ -102,7 +102,7 @@
                 </a>
 
                 @foreach ($product as $p)
-                    <a href="#">
+                    <a href="{{ route('product.edit', $p->id) }}">
                         <div class="slot-barang">
                             <img class="foto-barang" src="{{ asset('img/product/' . $p->image) }}" alt="">
                             <div class="data-barang">
