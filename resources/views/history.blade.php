@@ -12,15 +12,15 @@
     <div class="nav-cont">
         <div class="navbar">
             <div class="kiri">
-                <a href="homepage"><img src="{{ asset('img/Logo.svg') }}" alt="" class="logo"></a>
+                <a href="{{ route('home') }}"><img src="{{ asset('img/Logo.svg') }}" alt="" class="logo"></a>
                 <div class="garis"></div>
-                <a href="profile" class="d-flex align-items-center">
+                <a href="#" class="d-flex align-items-center">
                 <img src="{{ asset('img/UserHomepage.svg') }}" alt="">
                 <p class="text-dark" >{{ $this_user->name }}</p>
                 </a>
             </div>
             <div class="kanan">
-                <a href="homepage">Return</a>
+                <a href="{{ route('home') }}">Return</a>
             </div>
         </div>
     </div>
@@ -56,13 +56,17 @@
         
         @isset ($order)
             @foreach ($order as $o)
-                <div class="isi">
+                @if ($o->status == "Pesanan telah diselesaikan")
+                    <div class="isi" style="background-color: green;">
+                @else
+                    <div class="isi" style="background-color: red;">
+                @endif
                     <div class="isian">
                         <p>{{ $user->find($o->customer_id)->name }}</p>
                     </div>
                     <div class="garis"></div>
                     <div class="isian">
-                        <p>{{ $product->find($o->product_id)->name }}</p>
+                        <p>{{ $product->find($o->product_id)->name }} * {{ $o->quantity }}</p>
                     </div>
                     <div class="garis"></div>
                     <div class="isian">

@@ -65,7 +65,6 @@ class OrderController extends Controller
                         ->join('orders', 'products.id', '=', 'orders.product_id')
                         ->where('products.seller_id', $request->user()->id)
                         ->where('status', '!=', 'Pesanan sedang diproses')
-                        ->orderBy('status', 'ASC')
                         ->get();
 
         if($order->first() == null)
