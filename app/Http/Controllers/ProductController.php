@@ -84,6 +84,8 @@ class ProductController extends Controller
      */
     public function show(Request $request, $id)
     {
+        if($request->user()->seller == 1)
+            return abort('404');
         $product = Product::find($id);
         $seller = User::find($product->seller_id);
         return view('product.show', compact('product', 'seller'), ['user' => $request->user()]);
