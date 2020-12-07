@@ -53,9 +53,10 @@
             </div>
         </div>
         <div class="garishorizontal"></div>
-        <div class="isi">
-            @isset ($order)
-                @foreach ($order as $o)
+        
+        @isset ($order)
+            @foreach ($order as $o)
+                <div class="isi">
                     <div class="isian">
                         <p>{{ $user->find($o->customer_id)->name }}</p>
                     </div>
@@ -75,11 +76,11 @@
                     <div class="isian">
                         <p>Rp.{{ $o->quantity *  $product->find($o->product_id)->price}}</p>
                     </div>
-                @endforeach
-            @else
-                Tidak ada riwayat pesanan
-            @endisset
-        </div>
+                </div>
+            @endforeach
+        @else
+            Tidak ada riwayat pesanan
+        @endisset
     </div>
 </body>
 </html>
