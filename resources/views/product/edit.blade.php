@@ -88,10 +88,14 @@
                     <button type="submit" class="btn btn-info">Ubah Produk</button>
                 </div>
             </form>
-            <form style="z-index: 1;" action="{{ route('product.destroy',$product->id) }}" method="POST">
+            <form style="background-color: transparent;" action="{{ route('product.destroy',$product->id) }}" method="POST">
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="btn btn-info" onclick="return confirm('Apakah Anda yakin ingin menghapus produk ini?')">Hapus Produk</button>
+                <button type="submit" class="btn btn-info hapus" onclick="return confirm('Apakah Anda yakin ingin menghapus produk ini?')" 
+                style="position: absolute;
+                top: 88%;
+                right:  40%;
+                background-color: red;">Hapus Produk</button>
             </form>
         </div>
     </div>
