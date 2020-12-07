@@ -29,9 +29,9 @@
             
             <div class="list-pesanan">
                 @foreach ($order as $o)
-                    @if ($o->status == 'menunggu dikirim')
+                    @if ($o->status == 'Pesanan telah diselesaikan')
                         <div class="pesanan" style="background-color:lightgreen;">
-                    @elseif ($o->status == 'dibatalkan oleh penjual')
+                    @elseif ($o->status == 'Pesanan telah dibatalkan')
                         <div class="pesanan" style="background-color:rgb(255, 96, 96);">
                     @else    
                         <div class="pesanan">
@@ -55,14 +55,14 @@
                         <div>
                             <h3>Status : {{ $o->status }}</h3>
                         </div>
-                        @if ($o->status == 'menunggu konfirmasi penjual')
+                        @if ($o->status == 'Pesanan sedang diproses')
                             <div class="button-collection">
                                 <form method="POST" action="{{ route('confirm_order', $o->id) }}">
                                     @csrf
                                     @method('PUT')
                                     <button type="submit" class="check-button complete-order"></button>
                                 </form>
-                                <form method="POST" action="{{ route('cancel_by_seller', $o->id) }}">
+                                <form method="POST" action="{{ route('cancel', $o->id) }}">
                                     @csrf
                                     @method('PUT')
                                     <button type="submit" class="cancel-button cancel-order"></button>
