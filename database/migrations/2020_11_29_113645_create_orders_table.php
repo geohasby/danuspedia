@@ -20,7 +20,7 @@ class CreateOrdersTable extends Migration
             $table->bigInteger('quantity');
             $table->dateTime('time_taken');
             $table->string('place_taken');
-            $table->string('status')->default('menunggu konfirmasi penjual');
+            $table->string('status')->default('Pesanan sedang diproses');
             $table->timestamps();
         });
     }

@@ -22,16 +22,6 @@ class OrderController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -61,69 +51,17 @@ class OrderController extends Controller
     }
 
     public function konfirmasi_penjual($id){
-        Order::find($id)->update(['status' => 'menunggu dikirim']);
+        Order::find($id)->update(['status' => 'Pesanan selesai']);
         return redirect()->route('seller.home')
-                        ->with('success', 'Order telah dikonfirmasi');
+                        ->with('success', 'Pesanan telah diselesaikan');
     }
 
-    public function cancel_by_seller($id){
+    public function cancel($id){
         $order = Order::find($id);
         $product = Product::find($order->product_id);
-        $order->update(['status' => 'dibatalkan oleh penjual']);
+        $order->update(['status' => 'Pesanan dibatalkan']);
         $product->update(['stock' => $product->stock + $order->quantity]);
         return redirect()->route('seller.home')
                         ->with('error', 'Order telah dibatalkan');
-    }
-
-    public function order_diterima(Request $request){
-        Order::find($request->id)->update(['status' => 'order sudah selesai']);
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Order $order)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Order $order)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Order $order)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        Order::find($id)->delete();
-
-        return redirect()->route('seller/home')
-                        ->with('success', 'Order deleted successfully');
     }
 }

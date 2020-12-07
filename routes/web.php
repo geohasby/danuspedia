@@ -22,17 +22,16 @@ Route::get('/', function () {
 
 require __DIR__.'/auth.php';
 
-
-Route::resource('order', OrderController::class);
-
-Route::resource('product', ProductController::class);
-
-Route::get('/home', [ProductController::class, 'index'])->name('home');
+Route::middleware('auth', 'verified')->group(function() {
+    Route::resource('order', OrderController::class);
+    Route::resource('product', ProductController::class);
+    Route::get('/home', [ProductController::class, 'index'])->name('home');
+});
 
 Route::middleware('auth', 'verified', 'seller')->group(function () {
     Route::get('seller/home', [SellerController::class, 'index'])->name('seller.home');
     Route::put('confirm_order/{confirm_order}', [OrderController::class, 'konfirmasi_penjual'])->name('confirm_order');
-    Route::put('cancel_by_seller/{cancel_by_seller}', [OrderController::class, 'cancel_by_seller'])->name('cancel_by_seller');
+    Route::put('cancel/{cancel}', [OrderController::class, 'cancel'])->name('cancel');
 
 });
 
