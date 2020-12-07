@@ -12,7 +12,7 @@
         <form method="POST" action="{{ route('register') }}">
             @csrf
             <label name="danuspedia" id="danuspedia">
-                <img src="{{ asset('img/Logo.svg') }}" class="logo">anuspedia
+                <img class="D" src="{{ asset('img/Logo.svg') }}" class="logo">anuspedia
             </label>
             <!-- Validation Errors -->
             <x-auth-validation-errors class="mb-4" :errors="$errors" style="color:red;margin-left:20px;margin-top:30px;" />
@@ -36,13 +36,21 @@
         </form>
         <div class="signInInfo">
             <label>Already have account?</label>
-            <br>
                 <label name="signIn">
                     <a id="signIn" href="{{ route('login') }}">Sign-in here~</a>
-                </label>
-            <br>
-            <label id="more" name="more">More</label>
-            <label> about danuspedia</label>    
+                </label>    
         </div>
+
     </body>
+
+    <script>
+
+        function more(){
+            document.getElementById("popDown").classList.toggle("turun");
+        }
+
+        function naik(){
+            document.getElementById("popDown").classList.remove("turun");
+        }
+    </script>
 </html>    

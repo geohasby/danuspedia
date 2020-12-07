@@ -11,7 +11,7 @@
     <body>
         <form method="POST" action="{{ route('login') }}">
             @csrf
-            <label name="danuspedia" id="danuspedia"><img src="{{ asset('img/Logo.svg' )}}" class="logo">anuspedia</label>
+            <label name="danuspedia" id="danuspedia"><img class="D" src="{{ asset('img/Logo.svg' )}}" class="logo">anuspedia</label>
             
             <!-- Session Status -->
             <x-auth-session-status class="mb-4" :status="session('status')" style="color:red;margin-left:20px;margin-top:30px;" />
@@ -35,9 +35,5 @@
                 </label>
             </div>
         </form>
-        <div class="moreInfo">
-            <label id="more" name="more">More</label>
-            <label> about danuspedia</label>    
-        </div>
     </body>
 </html>    
