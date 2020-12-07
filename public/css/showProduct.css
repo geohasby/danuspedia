@@ -550,3 +550,15 @@ body {
     font-family: 'Ubuntu', sans-serif;
   }
 
+  #comingSoon{
+    position: absolute;
+    margin-right: -62px;
+    background-color: pink;
+    border-radius: 20px;
+    text-align: center;
+    pointer-events: none;
+    height: 100%;
+	  z-index: 2;
+	  display: none;
+}
+

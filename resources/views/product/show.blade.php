@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="{{ asset('css/showProduct.css') }}">
   <link rel="shortcut icon" href="{{ asset('img/iconWeb.svg' )}}" type="image/x-icon">
 </head>
-<body>
+<body onresize="responToSize()">
     <div class="header-container">
       <div class="title-bar">
         <div class="title-bar-left">
@@ -65,8 +65,11 @@
             <button class="dropbtnProfile"><img src="{{ asset('img/UserHomepage.svg') }}" class="UserLogo">
               <img class="segitigaRight" src="{{ asset('img/SegitigaHomepage.svg') }}">
             </button>
+            <div id="comingSoon">coming soon!</div> 
             <div id="profileDropdown" class="dropdownProfile-content">
-              <a href="#">Profile</a>
+            <a onClick="comingSoon()" style="cursor: pointer;">Profile</a>
+            <a href="{{ route('history') }}">History</a>
+            <form method="POST" action="{{ route('logout') }}">
               <form method="POST" action="{{ route('logout') }}">
                 @csrf
                 <a type="submit" href="route('logout')" onclick="event.preventDefault();this.closest('form').submit();">Logout</a>
@@ -122,7 +125,7 @@
                     <span>Jumlah Dibeli</span>
                     <div class="fungsi-container">
                       <button type="button" disabled id="kurang"></button>
-                      <input id="kuantitas-beli" class="kuantitas-final" name="quantity" value="0">
+                      <input onChange="cek()"id="kuantitas-beli" class="kuantitas-final" name="quantity" value="0">
                       <button type="button" id="tambah"></button>
                       <div class="clear"></div>
                     </div>
@@ -268,17 +271,20 @@
       if(parseInt(dibeli.value) > 0) kurang.disabled = false;
       if(parseInt(dibeli.value) >= parseInt(stok)) tambah.disabled = true;
     });
-    window.setInterval(function(){
-      if(parseInt(dibeli.value) > 100 || (parseInt(dibeli.value) > parseInt(stok.value))) dibeli.value = stok;
-      if(parseInt(dibeli.value) < 0) dibeli.value = 0;
-    },10);
-
-    window.addEventListener("click", function() {
-      if(Number.isNaN(parseInt(dibeli.value))) dibeli.value = 0;
-      console.log("a");
-      total.innerHTML = parseInt(dibeli.value)*parseInt(harga);
-    });
-
+    function cek() {
+      if(parseInt(dibeli.innerHTML) > stok) {
+        dibeli.innerHTML = 0;
+        alert("Maaf, stok tidak mencukupi");
+      }
+      if(isNaN(parseInt(dibeli.innerHTML)) == true){
+        dibeli.innerHTML = 0;
+        alert("Masukkan angka, bukan huruf");
+      }
+      if(parseInt(dibeli.innerHTML) < 0){
+        dibeli.innerHTML = 0;
+        alert("Angka tidak valid!")
+      }
+    }
 
     //////////tombol kurang////////////
     kurang.addEventListener('click', function() {
@@ -297,10 +303,8 @@
       if(parseInt(dibeli.value) >= parseInt(stok)) tambah.disabled = true;
     });
 
-    var normalTimer = setInterval(cekOverlap, 100);
     var normalWindow = true;
-
-    function cekOverlap(){
+    function responToSize(){
       var segitigaOrganisasi = document.getElementById("segitigaOrganisasi");
       var rect = segitigaOrganisasi.getBoundingClientRect();
       var y=rect.left;
@@ -312,6 +316,18 @@
         document.getElementById("kotakSearch").classList.toggle("kecilinSearch");
         normalWindow = true;
       }
+    }
+
+    function comingSoon(){
+      document.getElementById("comingSoon").style.display = "block";
+      document.getElementById("comingSoon").style.transition = "4s linear";
+      window.setTimeout(function(){
+        document.getElementById("comingSoon").style.opacity = "0";
+        window.setTimeout(function(){
+          document.getElementById("comingSoon").style.display = "none";
+          document.getElementById("comingSoon").style.opacity = "100%";
+       },6000)
+      },100)
     }
 
     // //////////tombol beli////////////

@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/home.css') }}">
 </head>
-<body>
+<body onresize="responToSize()">
   <div class="header-container">
     <div class="title-bar">
       <div class="title-bar-left">
@@ -220,7 +220,6 @@
       },100)
     }
 
-    var normalTimer = setInterval(responToSize, 100);
     var normalSearch = true;
     var normalContainer = true;
     var searchBox = document.getElementById("kotakSearch");
