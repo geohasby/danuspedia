@@ -25,11 +25,19 @@
         </div>
     </div>
     <div class="kotak-1">
-        <p class="daftarp">Daftar Penjualan</p>
+        @if ($this_user->seller == 1)
+            <p class="daftarp">Riwayat Penjualan</p>
+        @else
+            <p class="daftarp">Riwayat Pembelian</p>
+        @endif
         <div class="head">
             <div class="namahead">
-                <img src="{{ asset('img/UserHomepage.svg') }}" alt="">
-                <p>Nama Pembeli</p>
+                <img src="{{ asset('img/UserHomepage.svg') }}" alt="">        
+                @if ($this_user->seller == 1)
+                    <p>Nama Pembeli</p>
+                @else
+                    <p>Nama Penjual</p>
+                @endif
             </div>
             <div class="garis"></div>
             <div class="namahead">
@@ -61,9 +69,13 @@
                 @else
                     <div class="isi" style="background-color: rgb(255, 96, 96)">
                 @endif
-                    <div class="isian">
-                        <p>{{ $user->find($o->customer_id)->name }}</p>
-                    </div>
+                    <div class="isian">                
+                        @if ($this_user->seller == 1)
+                            <p>{{ $user->find($o->customer_id)->name }}</p>
+                        @else
+                            <p>{{ $user->find($o->seller_id)->name }}</p>
+                        @endif
+                        </div>
                     <div class="garis"></div>
                     <div class="isian">
                         <p>{{ $product->find($o->product_id)->name }} * {{ $o->quantity }}</p>

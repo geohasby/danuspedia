@@ -60,8 +60,12 @@ class OrderController extends Controller
         $product = Product::all();
 
         if($request->user()->seller == '0')
-            $order = Order::where('customer_id', $request->user()->id)->get();
-        else $order = DB::table('products')
+            $order = DB::table('products')
+                        ->join('orders', 'products.id', '=', 'orders.product_id')
+                        ->where('orders.customer_id', $request->user()->id)
+                        ->get();
+        else
+            $order = DB::table('products')
                         ->join('orders', 'products.id', '=', 'orders.product_id')
                         ->where('products.seller_id', $request->user()->id)
                         ->where('status', '!=', 'Pesanan sedang diproses')
