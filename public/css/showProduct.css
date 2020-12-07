@@ -374,14 +374,13 @@ body {
     float: left;
   }
   .fungsi-container{
-    width: 180px;
+    width: 200px;
     height: 100px;
     margin-left: auto;
     margin-right:auto ;
   }
   .kuantitas span{
-    /* text-align: center; */
-    margin-left: 15px;
+    text-align: center;
     font-family: 'Ubuntu', sans-serif;
     font-size: 20px;
     display: block;
@@ -396,6 +395,7 @@ body {
     background-size: 35px;
     background-repeat: no-repeat;
     margin-top: 3%;
+    float: left;
   }
   .kuantitas button:disabled{
     background-color: gray;
@@ -415,20 +415,16 @@ body {
     text-align: center;
     font-size: 300%;
     font-family: 'Ubuntu', sans-serif;
-    margin-top: 3%;
-    float: left;
     border: none;
+    border-bottom: 2px solid black;
     background-color: inherit;
     margin-top: 3%;
     float: left;
-    border-bottom: 2px solid black;
+  }
+  .clear{
+    clear: left;
   }
   
-  .aturInput{
-    position: absolute;
-    margin-left: 5px;
-    margin-top: 3px;
-  }
   .lokasi, .waktu{
     padding: 1% 0px 0px 1%;
     height: auto;
