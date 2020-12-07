@@ -154,9 +154,7 @@ input, textarea, select, option{
     padding: 10px 30px;
 }
 .daftarp{
-    font-size: larger;
-    width: 100%;
-    text-align: left;
+    font-size: 39px;
 }
 .head{
     display: flex;
@@ -174,6 +172,8 @@ input, textarea, select, option{
     height: 70px;
     background-color: white;
     width: 90%;
+    border: 1px solid;
+    text-align: center;
 }
 .isian{
     width: 150px;

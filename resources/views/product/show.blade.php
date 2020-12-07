@@ -269,7 +269,7 @@
       if(parseInt(dibeli.value) >= parseInt(stok)) tambah.disabled = true;
     });
     window.setInterval(function(){
-      if(parseInt(dibeli.value) > 100) dibeli.value = stok;
+      if(parseInt(dibeli.value) > 100 || (parseInt(dibeli.value) > parseInt(stok.value))) dibeli.value = stok;
       if(parseInt(dibeli.value) < 0) dibeli.value = 0;
     },10);
 

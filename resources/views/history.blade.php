@@ -57,9 +57,9 @@
         @isset ($order)
             @foreach ($order as $o)
                 @if ($o->status == "Pesanan telah diselesaikan")
-                    <div class="isi" style="background-color: green;">
+                    <div class="isi" style="background-color: lightgreen;">
                 @else
-                    <div class="isi" style="background-color: red;">
+                    <div class="isi" style="background-color: rgb(255, 96, 96)">
                 @endif
                     <div class="isian">
                         <p>{{ $user->find($o->customer_id)->name }}</p>
