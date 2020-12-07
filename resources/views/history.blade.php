@@ -66,8 +66,10 @@
             @foreach ($order as $o)
                 @if ($o->status == "Pesanan telah diselesaikan")
                     <div class="isi" style="background-color: lightgreen;">
-                @else
+                @elseif ($o->status == "Pesanan telah dibatalkan")
                     <div class="isi" style="background-color: rgb(255, 96, 96)">
+                @else
+                    <div class="isi">
                 @endif
                     <div class="isian">                
                         @if ($this_user->seller == 1)
