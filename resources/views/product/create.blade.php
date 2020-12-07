@@ -28,7 +28,7 @@
     </div>
     <div class="d-flex justify-content-center">
         @if ($errors->any())
-            <div class="alert alert-danger">
+            <div class="alert alert-danger warning">
                 <strong>Whoops!</strong> There were some problems with your input.<br><br>
                 <ul>
                     @foreach ($errors->all() as $error)

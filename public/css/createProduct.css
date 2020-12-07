@@ -16,6 +16,7 @@ body{
     font-family: 'Open Sans Condensed', sans-serif;
 }
 
+
 .navbar{
     max-width: 1071px;
     width: 90%;
@@ -69,6 +70,14 @@ body{
 
     position: fixed;
     top: 128px;
+}
+
+.warning{
+    z-index: 1;
+    border: 2px black;
+    border-style: solid;
+    height: 140px;
+    top: 11px;
 }
 
 .input{
