@@ -139,9 +139,8 @@ Header
 	font-weight: bold;
 	outline: none;
 }
-.wrapper:focus{
-  border: 2px solid rgb(0, 0, 0);
-}
+
+
 .searchbtn {
     background: #e4e4e1;
     width: 10%;
@@ -155,13 +154,6 @@ Header
 
  .searchbtn:hover{
 	background-color: rgb(216, 216, 216);
-}
-
-.searchbtn .fas{
-	position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 .title-bar-right {
@@ -290,6 +282,13 @@ Window
 	display: flex;
 	justify-content: space-around;
 	margin-bottom: 10px;
+	transition: all 1s ease;
+	
+}
+
+.blokDisplay{
+	margin-left: 10%;
+	display: inline-block;
 }
 .photo-container {
 	position: relative;

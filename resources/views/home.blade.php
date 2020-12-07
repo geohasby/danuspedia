@@ -51,8 +51,8 @@
         </div>
           <form class="wrapper" id="kotakSearch" method="GET" action="{{ url('search') }}">
             <input type="text" name="keyword" class="input" id="searchThis" placeholder="What are you looking for?">
-            <button type="submit" class="searchbtn" onclick="searchSomething()">
-              <img class="fas" src="{{ asset('img/SearchHomepage.svg') }}">
+            <button type="submit" class="searchbtn">
+              <img src="{{ asset('img/SearchHomepage.svg') }}">
             </button>
           </form>
       </div>
@@ -205,19 +205,35 @@
       }
     }
 
-    var normalTimer = setInterval(cekOverlap, 100);
-    var normalWindow = true;
-    function cekOverlap(){
+    var normalTimer = setInterval(responToSize, 100);
+    var normalSearch = true;
+    var normalContainer = true;
+    var searchBox = document.getElementById("kotakSearch");
+    var photoColumn = document.getElementsByClassName("photo-column");
+    function responToSize(){
       var segitigaOrganisasi = document.getElementById("segitigaOrganisasi");
       var rect = segitigaOrganisasi.getBoundingClientRect();
       var y=rect.left;
-      if(y<460 && normalWindow){
-        document.getElementById("kotakSearch").classList.toggle("kecilinSearch");
-        normalWindow = false;
+      if(y<460 && normalSearch){
+        searchBox.classList.toggle("kecilinSearch");
+        normalSearch = false;
       }
-      else if(y>460 && !normalWindow){
-        document.getElementById("kotakSearch").classList.toggle("kecilinSearch");
-        normalWindow = true;
+      else if(y>460 && !normalSearch){
+       searchBox.classList.toggle("kecilinSearch");
+        normalSearch = true;
+      }
+      var width = document.getElementsByClassName("products-container")[0].offsetWidth
+      if( width < 900 && normalContainer){
+        normalContainer = false;
+        for(var i=0;i<photoColumn.length;i++){
+          photoColumn[i].classList.toggle("blokDisplay")
+        }
+      }
+      if( width > 900 && !normalContainer){
+        normalContainer = true;
+        for(var i=0;i<photoColumn.length;i++){
+          photoColumn[i].classList.toggle("blokDisplay")
+        }
       }
     }
 
