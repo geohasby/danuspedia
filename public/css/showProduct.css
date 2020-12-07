@@ -365,24 +365,29 @@ body {
   }
   .spesifikasi-pemesanan{
     width: 100%;
-    height: 271px7
+    height: 271px;
   }
   .kuantitas{
-    padding: 2% 0px 0px 0px;
+    padding: 2% 0px 0px 0%;
     height: 100px;
     width: 50%;
     float: left;
   }
+  .fungsi-container{
+    width: 180px;
+    height: 100px;
+    margin-left: auto;
+    margin-right:auto ;
+  }
   .kuantitas span{
-    margin-top: 5%;
-    margin-left: 2%;
-    margin-right: 5%;
+    /* text-align: center; */
+    margin-left: 15px;
     font-family: 'Ubuntu', sans-serif;
     font-size: 20px;
-    float: left;
+    display: block;
   }
   .kuantitas button{
-    height: 60%;
+    height: 60px;
     width: 60px;
     border-radius: 30px;
     border: 3px solid black;
@@ -390,7 +395,7 @@ body {
     background-color: pink;
     background-size: 35px;
     background-repeat: no-repeat;
-    float: left;
+    margin-top: 3%;
   }
   .kuantitas button:disabled{
     background-color: gray;
@@ -406,14 +411,24 @@ body {
   }
   .kuantitas-final{
     height: 60%;
-    width: 15%;
+    width: 60px;
     text-align: center;
     font-size: 300%;
     font-family: 'Ubuntu', sans-serif;
-    border-bottom: 2px solid black;
+    margin-top: 3%;
     float: left;
+    border: none;
+    background-color: inherit;
+    margin-top: 3%;
+    float: left;
+    border-bottom: 2px solid black;
   }
   
+  .aturInput{
+    position: absolute;
+    margin-left: 5px;
+    margin-top: 3px;
+  }
   .lokasi, .waktu{
     padding: 1% 0px 0px 1%;
     height: auto;
