@@ -219,6 +219,17 @@ Header
 	display: block;
   }
   
+  #comingSoon{
+    position: absolute;
+    margin-right: -62px;
+    background-color: pink;
+    border-radius: 20px;
+    text-align: center;
+    pointer-events: none;
+    height: 100%;
+	z-index: 2;
+	display: none;
+}
   /* Change color of dropdown links on hover */
   .dropdownProfile-content a:hover {background-color: #ddd;}
   

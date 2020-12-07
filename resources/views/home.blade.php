@@ -62,8 +62,11 @@
           <button class="dropbtnProfile"><img src="{{ asset('img/UserHomepage.svg') }}" class="UserLogo">
             <img class="segitigaRight" src="{{ asset('img/SegitigaHomepage.svg') }}">
           </button>
+          <div id="comingSoon">coming soon!</div> 
           <div id="profileDropdown" class="dropdownProfile-content">
-            <a href="#">Profile</a>
+          
+            <a onClick="comingSoon()" style="cursor: pointer;">Profile</a>
+            <a href="#">History</a>
             <form method="POST" action="{{ route('logout') }}">
               @csrf
               <a type="submit" href="route('logout')" onclick="event.preventDefault();this.closest('form').submit();">Logout</a>
@@ -203,6 +206,18 @@
           }
         }
       }
+    }
+
+    function comingSoon(){
+      document.getElementById("comingSoon").style.display = "block";
+      document.getElementById("comingSoon").style.transition = "4s linear";
+      window.setTimeout(function(){
+        document.getElementById("comingSoon").style.opacity = "0";
+        window.setTimeout(function(){
+          document.getElementById("comingSoon").style.display = "none";
+          document.getElementById("comingSoon").style.opacity = "100%";
+       },6000)
+      },100)
     }
 
     var normalTimer = setInterval(responToSize, 100);
