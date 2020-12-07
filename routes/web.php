@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SellerController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,18 +22,21 @@ Route::get('/', function () {
 
 require __DIR__.'/auth.php';
 
-use App\Http\Controllers\SellerController;
-Route::get('seller/home', [SellerController::class, 'index'])->name('seller.home');
 
-use App\Http\Controllers\OrderController;
 Route::resource('order', OrderController::class);
-Route::put('confirm_order/{confirm_order}', [OrderController::class, 'konfirmasi_penjual'])->name('confirm_order');
-Route::put('cancel/{cancel}', [OrderController::class, 'batal'])->name('cancel');
 
-use App\Http\Controllers\ProductController;
-Route::get('/home', [ProductController::class, 'index'])->middleware('auth', 'verified')->name('home');
 Route::resource('product', ProductController::class);
-Route::get('{mode}/{keyword?}', [ProductController::class, 'search']); //taruh paling bawah
 
+Route::middleware('auth', 'verified', 'seller')->group(function () {
+    Route::get('seller/home', [SellerController::class, 'index'])->name('seller.home');
+    Route::put('confirm_order/{confirm_order}', [OrderController::class, 'konfirmasi_penjual'])->name('confirm_order');
+    Route::put('cancel_by_seller/{cancel_by_seller}', [OrderController::class, 'cancel_by_seller'])->name('cancel_by_seller');
 
+});
+
+Route::middleware('auth', 'verified', 'customer')->group(function () {
+    Route::get('/home', [ProductController::class, 'index'])->name('home');
+    
+    Route::get('{mode}/{keyword?}', [ProductController::class, 'search']); //taruh paling bawah
+});
 

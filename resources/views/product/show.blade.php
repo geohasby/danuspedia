@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danuspedia - {{ $product->name }}</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danuspedia - {{ $product->name }}</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="shortcut icon" href="{{ asset('img/iconWeb.svg' )}}" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Kodchasan:wght@200&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet" type ='text/css'>
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/showProduct.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/showProduct.css') }}">
 </head>
 <body>
     <div class="header-container">
@@ -32,21 +33,21 @@
             <div class="dropdown"style="margin-left: 30px;">
               <button onclick="HimaDrop()" class="dropbtn" >Himpunan <img class="segitiga" src="{{ asset('img/SegitigaHomepage.svg') }}"></button>
               <div id="himpunanDropdown" class="dropdown-content">
-                <a href="{{ url('organisasi/HIMAKOM') }}">HIMAKOM</a>
-                <a href="{{ url('organisasi/HMEI') }}">HMEI</a>
-                <a href="{{ url('organisasi/HIMATIKA') }}">HIMATIKA</a>
-                <a href="{{ url('organisasi/HIMASTA') }}">HIMASTA</a>
-                <a href="{{ url('organisasi/HIMARIA') }}">HIMARIA</a>
-                <a href="{{ url('organisasi/HIMAFI') }}">HIMAFI</a>
-                <a href="{{ url('organisasi/HMGF') }}">HMGF</a>
-                <a href="{{ url('organisasi/KMK') }}">KMK</a>
+              <a href="{{ url('himpunan/HIMAKOM') }}">HIMAKOM</a>
+              <a href="{{ url('himpunan/HMEI') }}">HMEI</a>
+              <a href="{{ url('himpunan/HIMATIKA') }}">HIMATIKA</a>
+              <a href="{{ url('himpunan/HIMASTA') }}">HIMASTA</a>
+              <a href="{{ url('himpunan/HIMARIA') }}">HIMARIA</a>
+              <a href="{{ url('himpunan/HIMAFI') }}">HIMAFI</a>
+              <a href="{{ url('himpunan/HMGF') }}">HMGF</a>
+              <a href="{{ url('himpunan/KMK') }}">KMK</a>
               </div>
             </div>
             <div class="dropdown"style="margin-left: 30px;">
               <button onclick="OrganisasiDrop()" class="dropbtn">Organisasi <img class="segitiga" id="segitigaOrganisasi" src="{{ asset('img/SegitigaHomepage.svg') }}"></button>
               <div id="organisasiDropdown" class="dropdown-content">
-                <a href="">ORKOM</a>
-                <a href="">OTI</a>
+              <a href="{{ url('organisasi/ORKOM') }}">ORKOM</a>
+              <a href="{{ url('organisasi/OTI') }}">OTI</a>
               </div>
             </div>
           </div>
@@ -156,8 +157,6 @@
         </div>
       </div>
 
-      
-
       <div id="success" class="success-popup">
         <span>Checkout Berhasil!</span>
         <p>Segera selesaikan pembayaran!</p>
@@ -197,7 +196,22 @@
         document.getElementById("organisasiDropdown").classList.toggle("show");
       }
   
-  
+      function HimaDrop(){
+        if(document.getElementById("himpunanDropdown").classList.contains('show')){
+          document.getElementById("himapunanDropdown").classList.remove('show');
+          return;
+        }
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+            }
+          }
+        document.getElementById("himpunanDropdown").classList.toggle("show");
+      }
+
       // Close the dropdown menu if the user clicks outside of it
       window.onclick = function(event) {
    
@@ -242,6 +256,14 @@
       document.getElementById('critic-state').innerHTML = " - Stok Habis!";
       beli.disabled = true;
     }
+
+    /////////ngisi input jumlah/////////
+    dibeli.addEventListener('input',function() {
+      total.innerHTML = parseInt(dibeli.value)*parseInt(harga);
+      if(parseInt(dibeli.value) > 0) kurang.disabled = false;
+      if(parseInt(dibeli.value) >= parseInt(stok)) tambah.disabled = true;
+    });
+
     //////////tombol kurang////////////
     kurang.addEventListener('click', function() {
       dibeli.value -= 1;

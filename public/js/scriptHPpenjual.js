@@ -3,6 +3,7 @@
 const search = document.querySelector('button#search');
 const reset = document.getElementById('reset');
 const inputBox = document.getElementById('cari-nama');
+const kolomPesanan = document.getElementById('pesanan');
 
 search.addEventListener('click', function() {
     let namaDicari = document.querySelector('input#cari-nama').value;
@@ -20,17 +21,18 @@ reset.addEventListener('click', function() {
 });
 
 if(document.getElementById("confirmOrder") != null){
-    var kelas = "confirmOrder";
-    setTimeout(fading,3000);
-  }
-  else if(document.getElementById("cancelOrder") != null){
-    var kelas = "cancelOrder"
-    setTimeout(fading,3000);
-  }
+  var kelas = "confirmOrder";
+  setTimeout(fading,3000);
+}
+else if(document.getElementById("cancelOrder") != null){
+  var kelas = "cancelOrder"
+  setTimeout(fading,3000);
+}
   
-  function fading(){
-    document.getElementById(kelas).classList.toggle("gone");
-  }
+function fading(){
+  document.getElementById(kelas).classList.toggle("gone");
+}
+
 
 //FUNGSI KONFIRMASI DAN POPUP//
 // const id_order = document.getElementsByClassName('order_id');

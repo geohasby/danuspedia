@@ -28,7 +28,14 @@
             
             <div class="list-pesanan">
                 @foreach ($order as $o)
-                    <div class="pesanan">
+                    @if ($o->status == 'menunggu dikirim')
+                        <div class="pesanan" style="background-color:green;">
+                    @elseif ($o->status == 'dibatalkan oleh penjual')
+                        <div class="pesanan" style="background-color:red;">
+                    @else    
+                        <div class="pesanan">
+                    @endif
+
                         <p class="order_id" style="display:none;">{{ $o->id }}</p>
                         <h2>{{ $user->find($o->customer_id)->name }}</h2>
                         <div class="att-produk">
@@ -47,18 +54,20 @@
                         <div>
                             <h3>Status : {{ $o->status }}</h3>
                         </div>
-                        <div class="button-collection to-right">
-                            <form method="POST" action="{{ route('confirm_order', $o->id) }}">
-                                @csrf
-                                @method('PUT')
-                                <button type="submit" class="check-button complete-order"></button>
-                            </form>
-                            <form method="POST" action="{{ route('cancel', $o->id) }}">
-                                @csrf
-                                @method('PUT')
-                                <button type="submit" class="cancel-button cancel-order"></button>
-                            </form>
-                        </div>
+                        @if ($o->status == 'menunggu konfirmasi penjual')
+                            <div class="button-collection to-right">
+                                <form method="POST" action="{{ route('confirm_order', $o->id) }}">
+                                    @csrf
+                                    @method('PUT')
+                                    <button type="submit" class="check-button complete-order"></button>
+                                </form>
+                                <form method="POST" action="{{ route('cancel_by_seller', $o->id) }}">
+                                    @csrf
+                                    @method('PUT')
+                                    <button type="submit" class="cancel-button cancel-order"></button>
+                                </form>
+                            </div>
+                        @endif
                     </div>
                 @endforeach
             </div>

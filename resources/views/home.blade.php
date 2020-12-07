@@ -31,21 +31,21 @@
           <div class="dropdown"style="margin-left: 30px;">
             <button onclick="HimaDrop()" class="dropbtn" >Himpunan <img class="segitiga" src="{{ asset('img/SegitigaHomepage.svg') }}"></button>
             <div id="himpunanDropdown" class="dropdown-content">
-              <a href="{{ url('organisasi/HIMAKOM') }}">HIMAKOM</a>
-              <a href="{{ url('organisasi/HMEI') }}">HMEI</a>
-              <a href="{{ url('organisasi/HIMATIKA') }}">HIMATIKA</a>
-              <a href="{{ url('organisasi/HIMASTA') }}">HIMASTA</a>
-              <a href="{{ url('organisasi/HIMARIA') }}">HIMARIA</a>
-              <a href="{{ url('organisasi/HIMAFI') }}">HIMAFI</a>
-              <a href="{{ url('organisasi/HMGF') }}">HMGF</a>
-              <a href="{{ url('organisasi/KMK') }}">KMK</a>
+              <a href="{{ url('himpunan/HIMAKOM') }}">HIMAKOM</a>
+              <a href="{{ url('himpunan/HMEI') }}">HMEI</a>
+              <a href="{{ url('himpunan/HIMATIKA') }}">HIMATIKA</a>
+              <a href="{{ url('himpunan/HIMASTA') }}">HIMASTA</a>
+              <a href="{{ url('himpunan/HIMARIA') }}">HIMARIA</a>
+              <a href="{{ url('himpunan/HIMAFI') }}">HIMAFI</a>
+              <a href="{{ url('himpunan/HMGF') }}">HMGF</a>
+              <a href="{{ url('himpunan/KMK') }}">KMK</a>
             </div>
           </div>
           <div class="dropdown"style="margin-left: 30px;">
             <button onclick="OrganisasiDrop()" class="dropbtn">Organisasi <img class="segitiga" id="segitigaOrganisasi" src="{{ asset('img/SegitigaHomepage.svg') }}"></button>
             <div id="organisasiDropdown" class="dropdown-content">
-              <a href="">ORKOM</a>
-              <a href="">OTI</a>
+              <a href="{{ url('organisasi/ORKOM') }}">ORKOM</a>
+              <a href="{{ url('organisasi/OTI') }}">OTI</a>
             </div>
           </div>
         </div>
@@ -94,6 +94,8 @@
             Kategori : 
           @elseif ($mode == 'organisasi')
             Organisasi : 
+          @elseif ($mode == 'himpunan')
+            Himpunan : 
           @endif  
           "{{$keyword}}"</span>
         </li>
@@ -202,6 +204,7 @@
         }
       }
     }
+
     var normalTimer = setInterval(cekOverlap, 100);
     var normalWindow = true;
     function cekOverlap(){

@@ -22,6 +22,7 @@ class SellerController extends Controller
         $order = DB::table('products')
                         ->join('orders', 'products.id', '=', 'orders.product_id')
                         ->where('products.seller_id', $request->user()->id)
+                        ->orderBy('status', 'DESC')
                         ->get();
         //IF PRODUCT / ORDER NULL
         return view('home_seller', compact('product', 'order'), ['user' => $request->user()]);

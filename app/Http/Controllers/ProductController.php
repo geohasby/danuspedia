@@ -18,7 +18,10 @@ class ProductController extends Controller
     {
         $product = Product::where('stock', '>', 0)->get();
         $seller = User::all();
-        //IF PRODUCT / SELLER NULL
+        
+        if($product->first() == null)
+            $product = null;
+
         return view('home', compact('product', 'seller'), ['user' => $request->user()])
                     ->with('i');
     }
@@ -30,7 +33,9 @@ class ProductController extends Controller
      */
     public function create(Request $request)
     {
-        return view('product.create', ['user' => $request->user()]);
+        if($request->user()->seller == 0)
+            return abort('404');
+        else return view('product.create', ['user' => $request->user()]);
     }
 
     /**
@@ -151,7 +156,7 @@ class ProductController extends Controller
             $seller = User::all();
             $product = Product::where('category', $keyword)->get();
         }
-        elseif ($mode == 'organisasi') {
+        elseif ($mode == 'organisasi' or $mode == 'himpunan') {
             $seller = User::all();
             $seller_id = $seller->where('name', $keyword)->first();
             
