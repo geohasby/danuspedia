@@ -1,0 +1,133 @@
+*,p,h1,h2,h3,h4,h5,h6{
+    margin: 0;
+    padding: 0;
+}
+.background{
+    background: url('../img/bgKanan.svg'), url('../img/bgKiri.svg');
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right,left;
+}
+body{
+    background-color: #ceffea;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.navbar{
+    max-width: 1071px;
+    width: 90%;
+    min-width: 380px;
+    height: 78px;
+
+    background: #F6E8EA;
+    border-radius: 20px;
+
+    position: fixed;
+    top: 32px;
+
+    display: flex;
+    justify-content: space-between;
+}
+.kiri{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.garis{
+    height: 80%;
+    width: 1px;
+    background-color: black;
+    margin-right: 16px;
+    margin-left: 4px;
+}
+.kiri p{
+    margin-left: 8px;
+}
+.logo{
+    width: 70px;
+    height: 54px;
+}
+
+.form{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    max-width: 765px;
+    width: 80%;
+    min-width: 320px;
+    height: 560px;
+
+    background: #F6E8EA;
+    border-radius: 30px;
+
+    position: fixed;
+    top: 128px;
+}
+
+.input{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    margin: 8px 0;
+}
+
+.input input[type=file]{
+    width: 40%;
+}
+
+.input label{
+    font-size: 25px;
+}
+.input select{
+    font-size: 20px;
+    padding-top: 7px;
+}
+
+.inputnama{
+    width: 100%;
+}
+
+input, textarea, select, option{
+    padding: 8px 13px;
+    width: 100%;
+    max-width: 450px;
+    border-radius: 20px;
+    resize: none;
+    border: 1px solid;
+}
+.input input:focus, .input textarea:focus, .input select:focus{
+    outline: none;
+}
+.submitButton{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 70%;
+}
+.btn.btn-info{
+    padding: 5px 20px;
+    border-radius: 20px;
+}
+
+.nav-cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.foto{
+    justify-content: flex-start;
+}
+
+.foto input{
+    background-color: white;
+    margin-left: 50px;
+}

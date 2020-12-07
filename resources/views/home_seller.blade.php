@@ -76,7 +76,7 @@
         
         <div class="second-section">
             <div class="nav-bar bg-main">
-                <a href="#">
+                <a href="{{ route('seller.home') }}">
                     <div class="logo nav-content"></div>
                 </a>
                 <div class="mini-profile nav-content">
@@ -94,7 +94,7 @@
                 </div>
             </div>
             <div class="main-content bg-main">        
-                <a href="#">
+                <a href="{{ route('product.create') }}">
                     <div class="tambah-jualan">
                         <div class="logo-tambah"></div>
                         <div class="teks-tambah">Tambah Barang</div>
