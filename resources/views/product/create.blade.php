@@ -27,19 +27,17 @@
         </div>
     </div>
     <div class="d-flex justify-content-center">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <div class="form d-flex justify-content-center flex-column align-items-center">
-            
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <strong>Whoops!</strong> There were some problems with your input.<br><br>
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
-
             <form method="POST" action="{{ route('product.store') }}" class="form" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="seller_id" value="{{$user->id}}">
