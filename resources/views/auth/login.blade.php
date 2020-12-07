@@ -9,6 +9,11 @@
             <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet" type ='text/css'>
     </head>
     <body>
+        <div class="moreAbout"><label id="more" onclick="mores()">More</label> about danuspedia</div>
+        <div class="popUpDanuspedia">Danuspedia adalah e-commerce yang akan mempermudah proses jual beli di lingkungan perkuliahan<br>
+            <label id="founded">Founded by Gamabrok </label>
+            <button id="popUpOke" onClick="naik()">Cool!</button>
+        </div>
         <form method="POST" action="{{ route('login') }}">
             @csrf
             <label name="danuspedia" id="danuspedia"><img class="D" src="{{ asset('img/Logo.svg' )}}" class="logo">anuspedia</label>
@@ -35,5 +40,16 @@
                 </label>
             </div>
         </form>
+        <script>
+            var popUp = document.getElementsByClassName("popUpDanuspedia")[0];
+            function mores(){
+                popUp.style.top = "50%";
+                popUp.style.opacity = 100;
+            }
+            function naik(){
+                popUp.style.top = "-50%";
+                popUp.style.opacity = 0;
+            }
+        </script>
     </body>
 </html>    
