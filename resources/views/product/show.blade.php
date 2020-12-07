@@ -120,11 +120,13 @@
                 <div class="spesifikasi-pemesanan">
                   <div class="kuantitas">
                     <span>Jumlah Dibeli</span>
-                    <div class="aturInput">
-                    <button disabled id="kurang" class="kuantitas"></button>
-                    <input id="kuantitas-beli" class="kuantitas-final" name="quantity" value="0">
-                    <button id="tambah"></button>
+                    <div class="fungsi-container">
+                      <button type="button" disabled id="kurang"></button>
+                      <input id="kuantitas-beli" class="kuantitas-final" name="quantity" value="0">
+                      <button type="button" id="tambah"></button>
+                      <div class="clear"></div>
                     </div>
+                    
                   </div>
                   <div class="lokasi">
                     <label for="place_taken">Lokasi Pengambilan :</label>
@@ -266,6 +268,17 @@
       if(parseInt(dibeli.value) > 0) kurang.disabled = false;
       if(parseInt(dibeli.value) >= parseInt(stok)) tambah.disabled = true;
     });
+    window.setInterval(function(){
+      if(parseInt(dibeli.value) > 100) dibeli.value = stok;
+      if(parseInt(dibeli.value) < 0) dibeli.value = 0;
+    },10);
+
+    window.addEventListener("click", function() {
+      if(Number.isNaN(parseInt(dibeli.value))) dibeli.value = 0;
+      console.log("a");
+      total.innerHTML = parseInt(dibeli.value)*parseInt(harga);
+    });
+
 
     //////////tombol kurang////////////
     kurang.addEventListener('click', function() {
@@ -274,6 +287,7 @@
       if(parseInt(dibeli.value) == 0) kurang.disabled = true;
       if(parseInt(dibeli.value) < parseInt(stok)) tambah.disabled = false;
     });
+    
 
     ///////////tombol tambah////////////
     tambah.addEventListener('click', function() {
