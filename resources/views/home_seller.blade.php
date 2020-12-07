@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Danuspedia</title>
+    <link rel="shortcut icon" href="{{ asset('img/iconWeb.svg' )}}" type="image/x-icon">
 </head>
 <body>
     <div class="content">
@@ -29,9 +30,9 @@
             <div class="list-pesanan">
                 @foreach ($order as $o)
                     @if ($o->status == 'menunggu dikirim')
-                        <div class="pesanan" style="background-color:green;">
+                        <div class="pesanan" style="background-color:lightgreen;">
                     @elseif ($o->status == 'dibatalkan oleh penjual')
-                        <div class="pesanan" style="background-color:red;">
+                        <div class="pesanan" style="background-color:rgb(255, 96, 96);">
                     @else    
                         <div class="pesanan">
                     @endif
@@ -55,7 +56,7 @@
                             <h3>Status : {{ $o->status }}</h3>
                         </div>
                         @if ($o->status == 'menunggu konfirmasi penjual')
-                            <div class="button-collection to-right">
+                            <div class="button-collection">
                                 <form method="POST" action="{{ route('confirm_order', $o->id) }}">
                                     @csrf
                                     @method('PUT')
