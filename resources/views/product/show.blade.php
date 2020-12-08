@@ -47,8 +47,10 @@
             <div class="dropdown"style="margin-left: 30px;">
               <button onclick="OrganisasiDrop()" class="dropbtn">Organisasi <img class="segitiga" id="segitigaOrganisasi" src="{{ asset('img/SegitigaHomepage.svg') }}"></button>
               <div id="organisasiDropdown" class="dropdown-content">
-              <a href="{{ url('organisasi/ORKOM') }}">ORKOM</a>
-              <a href="{{ url('organisasi/OTI') }}">OTI</a>
+                <a href="{{ url('organisasi/OTI') }}">OTI</a>
+                <a href="{{ url('organisasi/LSIS') }}">LSIS</a>
+                <a href="{{ url('organisasi/SMC') }}">SMC</a>
+                <a href="{{ url('organisasi/MAPALA') }}">MAPALA</a>
               </div>
             </div>
           </div>
@@ -146,7 +148,7 @@
                     <label for="waktu">Waktu Pengambilan</label>
                     <input required name="time_taken" type="datetime-local" id="waktu">
                   </div>
-                  <button type="submit" id="checkout">Beli Sekarang! - Rp. <b id="total-harga">0</b></button>
+                  <button type="submit" id="checkout" onclick="return confirm('Apakah Anda yakin ingin membeli produk ini?')">Beli Sekarang! - Rp. <b id="total-harga">0</b></button>
                   <!-- <div id="popup" class="popup-container">
                     <div class="popup">
                       <div class="teks-konfirmasi">Apakah Anda Yakin?</div>

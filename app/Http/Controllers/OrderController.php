@@ -40,7 +40,7 @@ class OrderController extends Controller
     }
 
     public function konfirmasi_penjual($id){
-        Order::find($id)->update(['status' => 'Pesanan selesai']);
+        Order::find($id)->update(['status' => 'Pesanan telah diselesaikan']);
         return redirect()->route('seller.home')
                         ->with('success', 'Pesanan telah diselesaikan');
     }
@@ -48,10 +48,10 @@ class OrderController extends Controller
     public function cancel($id){
         $order = Order::find($id);
         $product = Product::find($order->product_id);
-        $order->update(['status' => 'Pesanan dibatalkan']);
+        $order->update(['status' => 'Pesanan telah dibatalkan']);
         $product->update(['stock' => $product->stock + $order->quantity]);
         return redirect()->route('seller.home')
-                        ->with('error', 'Order telah dibatalkan');
+                        ->with('error', 'PEsanan telah dibatalkan');
     }
 
     public function history(Request $request)

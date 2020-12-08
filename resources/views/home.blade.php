@@ -44,8 +44,10 @@
           <div class="dropdown"style="margin-left: 30px;">
             <button onclick="OrganisasiDrop()" class="dropbtn">Organisasi <img class="segitiga" id="segitigaOrganisasi" src="{{ asset('img/SegitigaHomepage.svg') }}"></button>
             <div id="organisasiDropdown" class="dropdown-content">
-              <a href="{{ url('organisasi/ORKOM') }}">ORKOM</a>
               <a href="{{ url('organisasi/OTI') }}">OTI</a>
+              <a href="{{ url('organisasi/LSIS') }}">LSIS</a>
+              <a href="{{ url('organisasi/SMC') }}">SMC</a>
+              <a href="{{ url('organisasi/MAPALA') }}">MAPALA</a>
             </div>
           </div>
         </div>

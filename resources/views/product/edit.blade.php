@@ -85,7 +85,7 @@
                     <input type="file" name="img" id="foto" class="inputfoto" value="{{ asset('img/' . $product->image) }}" required>
                 </div>
                 <div class="submitButton">
-                    <button type="submit" class="btn btn-info">Ubah Produk</button>
+                    <button type="submit" class="btn btn-info" onclick="return confirm('Apakah Anda yakin ingin mengubah produk ini?')">Ubah Produk</button>
                 </div>
             </form>
             <form style="background-color: transparent;" action="{{ route('product.destroy',$product->id) }}" method="POST">
