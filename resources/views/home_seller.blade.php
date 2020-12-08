@@ -60,12 +60,12 @@
                                 <form method="POST" action="{{ route('confirm_order', $o->id) }}">
                                     @csrf
                                     @method('PUT')
-                                    <button type="submit" class="check-button complete-order"></button>
+                                    <button type="submit" class="check-button complete-order" onclick="return confirm('Apakah Anda yakin pesanan ini sudah berhasil diselesaikan?')"></button>
                                 </form>
                                 <form method="POST" action="{{ route('cancel', $o->id) }}">
                                     @csrf
                                     @method('PUT')
-                                    <button type="submit" class="cancel-button cancel-order"></button>
+                                    <button type="submit" class="cancel-button cancel-order" onclick="return confirm('Apakah Anda yakin ingin membatalkan pesanan ini?')"></button>
                                 </form>
                             </div>
                         @endif
