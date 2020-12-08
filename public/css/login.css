@@ -54,7 +54,7 @@ input[type="email"]
 
 input[type=password]:focus,
 input[type="email"]:focus{
-  border: 2px solid rgb(0, 0, 0);
+  border: 2px solid black;
 }
 
 input[type="checkbox"]
@@ -104,12 +104,6 @@ label {
   /* margin-top: -500px;*/
 }
 
-.moreInfo{
-  margin: auto;
-  margin-left: 43%;
-  margin-top: 8%;
-  font-size: 80%;
-}
 #register,
 #more{
   color: blue;
@@ -143,6 +137,7 @@ label {
   top: 5%;
   left: 50%;
   transform: translate(-50%,-50%);
+  font-size: 30px;
 }
 
 
@@ -201,7 +196,6 @@ label {
     top: 0px;
     right: 60px;
     left: auto;
-    font-size: 20px;
     transform: none;
   }
 

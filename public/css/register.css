@@ -23,7 +23,7 @@ body {
 form {
   max-width: 300px;
   margin: 30px auto;
-  margin-bottom: -150px;
+  margin-bottom: -160px;
   padding: 10px 20px;
   background: #F6E8EA;
   border: 4px solid #000000;
@@ -129,7 +129,7 @@ label {
     font-size: 80%;
     display: block;
     margin-top: 105px;
-    padding-top: 44px;
+    padding-top: 45px;
     pointer-events: none;
 }
 
@@ -143,9 +143,8 @@ label {
   top: 5%;
   left: 50%;
   transform: translate(-50%,-50%);
+  font-size: 25px;
 }
-
-
 
 .popUpDanuspedia{
   width: 25%;
@@ -210,7 +209,6 @@ label {
     top: 0px;
     right: 60px;
     left: auto;
-    font-size: 20px;
     transform: none;
   }
 
