@@ -10,6 +10,18 @@ use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
+    public function seller_index(Request $request){
+        $user = User::all();
+        $product = Product::where('seller_id', $request->user()->id)->get();
+        $order = DB::table('products')
+                        ->join('orders', 'products.id', '=', 'orders.product_id')
+                        ->where('products.seller_id', $request->user()->id)
+                        ->orderBy('status', 'ASC')
+                        ->get();
+        //IF PRODUCT / ORDER NULL
+        return view('home_seller', compact('product', 'order'), ['user' => $request->user()]);
+    }
+
     /**
      * Store a newly created resource in storage.
      *
