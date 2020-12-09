@@ -51,7 +51,7 @@
                         <option disabled selected value="">Pilih Kategori Barang</option>
                         <option value="makanan">Makanan</option>
                         <option value="minuman">Minuman</option>
-                        <option value="lain">Lainnya</option>
+                        <option value="lain-lain">Lainnya</option>
                     </select>
                 </div>
                 <div class="input stok">
